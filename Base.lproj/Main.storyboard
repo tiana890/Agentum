@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hhS-D5-kIv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Файлы-->
         <scene sceneID="5W0-Wy-nyh">
             <objects>
-                <viewController id="MeI-j2-eVX" sceneMemberID="viewController">
+                <viewController id="MeI-j2-eVX" customClass="FilesViewController" customModule="Agentum" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ojt-M6-7lM"/>
                         <viewControllerLayoutGuide type="bottom" id="vXR-7M-3qB"/>

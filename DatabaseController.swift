@@ -38,40 +38,11 @@ class DatabaseController: NSObject {
         })
     }
     
-    private func runFetchForClass(databaseObjectClass: AnyClass, fetchBlock: DatabaseFetchBlock, fetchResultsBlock: DatabaseFetchResultsBlock)
-    {
-        var resultSet = fetchBlock(self.database)
-        NSArray *fetchedObjects = self.databaseObjectWithResultSet(resultSet, databaseObjectClass)
+    private func runFetchForClass(databaseObjectClass: AnyClass, fetchBlock: DatabaseFetchBlock, fetchResultsBlock: DatabaseFetchResultsBlock){
+        var result = fetchBlock(database: self.database)
         
     }
     
-/*
-    -[VSDatabaseController runFetchForClass:(Class)databaseObjectClass
-    fetchBlock:(VSDatabaseFetchBlock)fetchBlock
-    fetchResultsBlock:(VSDatabaseFetchResultsBlock)fetchResultsBlock];
-    These two lines do much of the work:
-    SELECT ALL
-    FMResultSet *resultSet = fetchBlock(self.database);
-    NSArray *fetchedObjects = [self databaseObjectsWithResultSet:resultSet
-    class:databaseObjectClass];
-    /*
-*/
-CREATE TABLE Worker (
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-Photo TEXT NOT NULL, -- имя файла-аватарки в папке с картинками
-LastName TEXT NOT NULL,
-FirstName TEXT NOT NULL,
-MiddleName TEXT NOT NULL,
-Birthday TEXT NOT NULL, -- дата: день рождения для расчёта возраста и т.п.
-MobilePhone TEXT NOT NULL,
-HomePhone TEXT NOT NULL,
-Email TEXT NOT NULL,
-HomeAddress TEXT NOT NULL,
-OtherContacts TEXT NOT NULL,
-JobType TEXT NOT NULL default 'fulltime', -- тип трудоустройства: fulltime, parttime, temporary, seasonal, piecework, other
-IsWorkingNow INTEGER NOT NULL default 1 -- 0 - уволен, 1 - действующий сотрудник
-);
-*/
     func addNewWorker(worker: AnyObject)
     {
         //вместо AnyObject должен быть тип объекта
@@ -80,5 +51,93 @@ IsWorkingNow INTEGER NOT NULL default 1 -- 0 - уволен, 1 - действу�
         }
     }
     
+    func getWorkers()
+    {
+        self.runFetchForClass(Worker.classForCoder(), fetchBlock: { (database) -> FMResultSet in
+            //res = self.database?.executeQuery("select * from Worker", withArgumentsInArray: nil)
+            
+            if let res = self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil){
+                while res.next() {
+                    let x = res.stringForColumn("count(*)")
+                    
+                    println("name = \(x); ")
+                    return res
+                }
+            } else {
+                println("select failed: \(self.database?.lastErrorMessage())")
+                //return self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil)
+            }
+            return nil;
+           
+            }, fetchResultsBlock: ())
+    }
     
+    
+    func upgradeDatabaseIfRequired(){
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let previousVersion = defaults.stringForKey("version")
+        let currentVersion = self.versionNumberString()
+        
+        if (previousVersion == nil || previousVersion!.compare(currentVersion as String, options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending) {
+            
+            let plistPath = NSBundle.mainBundle().pathForResource("UpgradeDatabase", ofType: "plist")
+            var plist:NSArray = NSArray(contentsOfFile: plistPath!) as! [[String:String]]
+            
+            //perform all upgrades
+            if (previousVersion == nil){
+                for (var i = 0; i < plist.count; i++){
+                    var dict = plist[i] as! Dictionary<String, String>
+                    var version = (dict as Dictionary)["version"]
+                    var fileName = dict["updateFileName"]
+                    var filePath = NSBundle.mainBundle().pathForResource(fileName, ofType: "sql");
+                    println("file path for update" + filePath!)
+                    self.executeSqlFileWith(filePath!, andDatabase: self.database!)
+                }
+            }
+            //perform needed upgrades
+            else{
+                for (var i = 0; i < plist.count; i++){
+                    var dict = plist[i] as! Dictionary<String, String>
+                    var version = (dict as Dictionary)["version"]
+                    var fileName = dict["updateFileName"]
+                    var filePath = NSBundle.mainBundle().pathForResource(fileName, ofType: "sql");
+                    println("file path for update" + filePath!)
+                    if (previousVersion!.compare(currentVersion as String, options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending) {
+                        self.executeSqlFileWith(filePath!, andDatabase: self.database!)
+                    }
+                }
+            }
+            
+        }
+        
+        defaults.setValue(currentVersion, forKey: "version")
+        defaults.synchronize()
+    }
+
+    private func versionNumberString() -> NSString{
+        var version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as! NSString
+        return version
+    }
+    
+    private func executeSqlFileWith(path:String, andDatabase db:FMDatabase)
+    {
+        let fileManager = NSFileManager.defaultManager()
+        var error: NSError?
+        
+        if fileManager.fileExistsAtPath(path){
+            let sqlString = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: &error)
+            
+            
+            if sqlString != nil{
+                var sqlStatements = sqlString?.componentsSeparatedByString(";\n")
+                
+                for sqlStatement: String in sqlStatements! {
+                    var success = db.executeStatements(sqlStatement.stringByAppendingString(";"))
+                }
+            }
+        }
+        
+    }
+
 }

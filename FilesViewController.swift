@@ -25,19 +25,38 @@ class FilesViewController: UIViewController {
             return
         }
         
+        //
+        
         var object = "Worker"
-        databaseController.addNewWorker(object)
+        //databaseController.addNewWorker(object)
+        databaseController.getWorkers()
+        /*
+        var worker = Worker.newRecord()
+        
+        Worker.registerDatabaseName("test", useDirectory: ARStorageDocuments)
+        worker.name = "Ulianna"
+        worker.save()
+        */
+        
+        //databaseController.upgradeDatabaseIfRequired()
+        
+        //var object = "Worker"
+        //databaseController.addNewWorker(object)
+        
         
         /*
+        
         var filePath = NSBundle.mainBundle().pathForResource("20141203-v1-base", ofType: "sql");
         println("Path = "+filePath!)
-        
-        self.executeSqlFileWith(filePath!, andDatabase: database)
-        database.setUserVersion(1)
-        println("Version = \(database.userVersion())")
-        
-        var success = database.executeStatements("create table if not exists test_table (test_no NUMBER, test_name TEXT);")
+        self.executeSqlFileWith(filePath!, andDatabase: databaseController.database!)
+        var filePath2 = NSBundle.mainBundle().pathForResource("20141203-v2-update", ofType: "sql");
+        self.executeSqlFileWith(filePath2!, andDatabase: databaseController.database!)
         */
+        //database.setUserVersion(1)
+        //println("Version = \(database.userVersion())")
+        
+        //var success = database.executeStatements("create table if not exists test_table (test_no NUMBER, test_name TEXT);")
+        
         //[db executeUpdate:@"INSERT INTO mytable (desc,sdate,interval,itype,price) VALUES (?,?,?,?,?);",
        // strDesc, datStartDate, numInterval, strIntervalType, strAmount, nil];
         //database.close()
@@ -70,6 +89,7 @@ class FilesViewController: UIViewController {
         
     }
 
+    
     /*
     // MARK: - Navigation
 
@@ -79,5 +99,25 @@ class FilesViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    //версия БД
+    /*
+    - (NSString *)versionNumberString {
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *majorVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    return majorVersion;
+    }*/
+    /*
+    NSString * const VERSION_KEY = @"version";
+    
+       
+    }
+    }
+    
+    [defaults setObject:currentVersion forKey:VERSION_KEY];
+    [defaults synchronize];
+    }
+    
+    }
+*/
+   
 }

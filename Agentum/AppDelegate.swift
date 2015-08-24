@@ -9,16 +9,56 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, DBDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //init things
+        let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as? String
+        let path = documentsFolder!.stringByAppendingPathComponent("test.db")
+        
+        var databaseController = DatabaseController()
+        
+        databaseController.initWithDatabase(path)
+        
+        if !databaseController.database!.open() {
+            println("Unable to open database")
+        }
+        
+        
+        databaseController.upgradeDatabaseIfRequired()
+        
+        
+        /* start the DBAccess engine by specifying the delegate and opening a database connection */
+        DBAccess.setDelegate(self)
+        DBAccess.openDatabaseNamed("test")
+        DBAccess.setPersistSynthesizedProperties(true)
+        
+        var w = Worker.new()
+        w.Photo = "photo.png"
+        w.FirstName = "Christina"
+        w.LastName = "Ivina"
+        w.MiddleName = "Ig"
+        w.MobilePhone = "6384573495"
+        w.HomeAddress = "Moldavskaya - 8"
+        w.HomePhone = "3463746"
+        w.IsWorkingNow = 0;
+        w.JobType = "fulltime"
+        w.Birthday = "12.08.00"
+        w.OtherContacts = "contacts"
+        w.Email = "ivina@gmail.com"
+        w.commit()
+
         return true
     }
-
+    
+    func databaseError(error: DBError!) {
+        println("Error description = " + error.description)
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

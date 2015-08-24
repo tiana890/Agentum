@@ -1,0 +1,20 @@
+PODS:
+  - DBAccess (1.6.7)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - iActiveRecord (1.3.2)
+
+DEPENDENCIES:
+  - DBAccess
+  - FMDB
+  - iActiveRecord
+
+SPEC CHECKSUMS:
+  DBAccess: d417d8cfddf8c20ef65fd117294ee8388ef2048e
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  iActiveRecord: 4b8c3d3962a1b07af9da33a9183d51195c78e303
+
+COCOAPODS: 0.38.0

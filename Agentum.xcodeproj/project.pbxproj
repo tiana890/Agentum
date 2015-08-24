@@ -20,45 +20,28 @@
 		883CC63D1B79EDEA00201CBB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 883CC63C1B79EDEA00201CBB /* libsqlite3.dylib */; };
 		883CC63F1B79F42300201CBB /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC63E1B79F42300201CBB /* FilesViewController.swift */; };
 		883CC6481B7AFE5800201CBB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC6471B7AFE5700201CBB /* DatabaseController.swift */; };
+		88DC4B0C1B8B774E00422875 /* alter_v2.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B021B8B774E00422875 /* alter_v2.sql */; };
+		88DC4B0D1B8B774E00422875 /* alter_v3.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B031B8B774E00422875 /* alter_v3.sql */; };
+		88DC4B0E1B8B774E00422875 /* alter_v4.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B041B8B774E00422875 /* alter_v4.sql */; };
+		88DC4B0F1B8B774E00422875 /* alter_v5.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B051B8B774E00422875 /* alter_v5.sql */; };
+		88DC4B101B8B774E00422875 /* alter_v6.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B061B8B774E00422875 /* alter_v6.sql */; };
+		88DC4B111B8B774E00422875 /* alter_v7.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B071B8B774E00422875 /* alter_v7.sql */; };
+		88DC4B151B8B774E00422875 /* base_v1.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B0B1B8B774E00422875 /* base_v1.sql */; };
+		88DC4B1F1B8B78AE00422875 /* Brigade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B161B8B78AE00422875 /* Brigade.swift */; };
+		88DC4B201B8B78AE00422875 /* BrigadeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B171B8B78AE00422875 /* BrigadeWorker.swift */; };
+		88DC4B211B8B78AE00422875 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B181B8B78AE00422875 /* Job.swift */; };
+		88DC4B221B8B78AE00422875 /* JobPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B191B8B78AE00422875 /* JobPlan.swift */; };
+		88DC4B231B8B78AE00422875 /* JobTechOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B1A1B8B78AE00422875 /* JobTechOp.swift */; };
+		88DC4B241B8B78AE00422875 /* JobTechOpPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B1B1B8B78AE00422875 /* JobTechOpPlan.swift */; };
+		88DC4B251B8B78AE00422875 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B1C1B8B78AE00422875 /* Skill.swift */; };
+		88DC4B261B8B78AE00422875 /* TechOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B1D1B8B78AE00422875 /* TechOp.swift */; };
+		88DC4B271B8B78AE00422875 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B1E1B8B78AE00422875 /* User.swift */; };
+		88DC4B291B8B790200422875 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B281B8B790200422875 /* APP.swift */; };
+		88DC4B7B1B8B7B9A00422875 /* UpgradeDatabase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B7A1B8B7B9A00422875 /* UpgradeDatabase.plist */; };
+		88DC4B851B8B89C900422875 /* alter_v8.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B821B8B89C900422875 /* alter_v8.sql */; };
+		88DC4B861B8B89C900422875 /* alter_v9.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B831B8B89C900422875 /* alter_v9.sql */; };
+		88DC4B871B8B89C900422875 /* alter_v10.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B841B8B89C900422875 /* alter_v10.sql */; };
 		88DCAFB41B81101D0036F69B /* UpgradeDatabase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88DCAFB31B81101D0036F69B /* UpgradeDatabase.plist */; };
-		88DCB00E1B81BA8B0036F69B /* ARBaseRelationship.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFB61B81BA8B0036F69B /* ARBaseRelationship.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB00F1B81BA8B0036F69B /* ARColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFB81B81BA8B0036F69B /* ARColumn.m */; };
-		88DCB0101B81BA8B0036F69B /* ARDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFBB1B81BA8B0036F69B /* ARDatabaseManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB0111B81BA8B0036F69B /* ARError.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFBE1B81BA8B0036F69B /* ARError.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB0121B81BA8B0036F69B /* ARException.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFC11B81BA8B0036F69B /* ARException.m */; };
-		88DCB0131B81BA8B0036F69B /* ARLazyFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFC31B81BA8B0036F69B /* ARLazyFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB0141B81BA8B0036F69B /* ARRelationBelongsTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFC71B81BA8B0036F69B /* ARRelationBelongsTo.m */; };
-		88DCB0151B81BA8B0036F69B /* ARRelationHasMany.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFC91B81BA8B0036F69B /* ARRelationHasMany.m */; };
-		88DCB0161B81BA8B0036F69B /* ARRelationHasManyThrough.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFCB1B81BA8B0036F69B /* ARRelationHasManyThrough.m */; };
-		88DCB0171B81BA8B0036F69B /* ARSchemaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFCF1B81BA8B0036F69B /* ARSchemaManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB0181B81BA8B0036F69B /* ARValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFD21B81BA8B0036F69B /* ARValidation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB0191B81BA8B0036F69B /* ARValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFD51B81BA8B0036F69B /* ARValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB01A1B81BA8B0036F69B /* ARValidatorPresence.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFD71B81BA8B0036F69B /* ARValidatorPresence.m */; };
-		88DCB01B1B81BA8B0036F69B /* ARValidatorUniqueness.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFDA1B81BA8B0036F69B /* ARValidatorUniqueness.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB01C1B81BA8B0036F69B /* ARWhereStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFDC1B81BA8B0036F69B /* ARWhereStatement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB01D1B81BA8B0036F69B /* ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFDF1B81BA8B0036F69B /* ActiveRecord.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB01E1B81BA8B0036F69B /* NSArray+objectsAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFE21B81BA8B0036F69B /* NSArray+objectsAccessors.m */; };
-		88DCB01F1B81BA8B0036F69B /* NSArray+toSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFE41B81BA8B0036F69B /* NSArray+toSql.m */; };
-		88DCB0201B81BA8B0036F69B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFE61B81BA8B0036F69B /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		88DCB0211B81BA8B0036F69B /* NSData+isPresented.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFE81B81BA8B0036F69B /* NSData+isPresented.m */; };
-		88DCB0221B81BA8B0036F69B /* NSData+sqlRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFEA1B81BA8B0036F69B /* NSData+sqlRepresentation.m */; };
-		88DCB0231B81BA8B0036F69B /* NSDate+isPresented.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFEC1B81BA8B0036F69B /* NSDate+isPresented.m */; };
-		88DCB0241B81BA8B0036F69B /* NSDate+sqlRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFEE1B81BA8B0036F69B /* NSDate+sqlRepresentation.m */; };
-		88DCB0251B81BA8B0036F69B /* NSDecimalNumber+isPresented.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFF01B81BA8B0036F69B /* NSDecimalNumber+isPresented.m */; };
-		88DCB0261B81BA8B0036F69B /* NSDecimalNumber+sqlRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFF21B81BA8B0036F69B /* NSDecimalNumber+sqlRepresentation.m */; };
-		88DCB0271B81BA8B0036F69B /* NSMutableDictionary+valueToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFF41B81BA8B0036F69B /* NSMutableDictionary+valueToArray.m */; };
-		88DCB0281B81BA8B0036F69B /* NSNumber+isPresented.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFF61B81BA8B0036F69B /* NSNumber+isPresented.m */; };
-		88DCB0291B81BA8B0036F69B /* NSNumber+sqlRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFF81B81BA8B0036F69B /* NSNumber+sqlRepresentation.m */; };
-		88DCB02A1B81BA8B0036F69B /* NSSet+toSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFFA1B81BA8B0036F69B /* NSSet+toSql.m */; };
-		88DCB02B1B81BA8B0036F69B /* NSString+isPresented.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFFC1B81BA8B0036F69B /* NSString+isPresented.m */; };
-		88DCB02C1B81BA8B0036F69B /* NSString+lowercaseFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCAFFE1B81BA8B0036F69B /* NSString+lowercaseFirst.m */; };
-		88DCB02D1B81BA8B0036F69B /* NSString+quotedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB0001B81BA8B0036F69B /* NSString+quotedString.m */; };
-		88DCB02E1B81BA8B0036F69B /* NSString+sqlRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB0021B81BA8B0036F69B /* NSString+sqlRepresentation.m */; };
-		88DCB02F1B81BA8B0036F69B /* NSString+stringWithEscapedQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB0041B81BA8B0036F69B /* NSString+stringWithEscapedQuote.m */; };
-		88DCB0301B81BA8B0036F69B /* sqlite3_unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB0061B81BA8B0036F69B /* sqlite3_unicode.c */; };
-		88DCB0311B81BA8B0036F69B /* iActiveRecord.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88DCB0081B81BA8B0036F69B /* iActiveRecord.xcconfig */; };
-		88DCB0321B81BA8B0036F69B /* iActiveRecord-Private.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88DCB0091B81BA8B0036F69B /* iActiveRecord-Private.xcconfig */; };
-		88DCB0331B81BA8B0036F69B /* iActiveRecord-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB00A1B81BA8B0036F69B /* iActiveRecord-dummy.m */; };
 		88DCB0351B81BD4F0036F69B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB0341B81BD4F0036F69B /* Worker.swift */; };
 		88DCB0391B8254860036F69B /* DBAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DCB0361B8254860036F69B /* DBAccess.framework */; };
 		88DCB03D1B82FE260036F69B /* WorkerSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB03C1B82FE260036F69B /* WorkerSkill.swift */; };
@@ -103,94 +86,28 @@
 		883CC63C1B79EDEA00201CBB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		883CC63E1B79F42300201CBB /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		883CC6471B7AFE5700201CBB /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		88DC4B021B8B774E00422875 /* alter_v2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v2.sql; sourceTree = "<group>"; };
+		88DC4B031B8B774E00422875 /* alter_v3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v3.sql; sourceTree = "<group>"; };
+		88DC4B041B8B774E00422875 /* alter_v4.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v4.sql; sourceTree = "<group>"; };
+		88DC4B051B8B774E00422875 /* alter_v5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v5.sql; sourceTree = "<group>"; };
+		88DC4B061B8B774E00422875 /* alter_v6.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v6.sql; sourceTree = "<group>"; };
+		88DC4B071B8B774E00422875 /* alter_v7.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v7.sql; sourceTree = "<group>"; };
+		88DC4B0B1B8B774E00422875 /* base_v1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base_v1.sql; sourceTree = "<group>"; };
+		88DC4B161B8B78AE00422875 /* Brigade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brigade.swift; sourceTree = "<group>"; };
+		88DC4B171B8B78AE00422875 /* BrigadeWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrigadeWorker.swift; sourceTree = "<group>"; };
+		88DC4B181B8B78AE00422875 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		88DC4B191B8B78AE00422875 /* JobPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPlan.swift; sourceTree = "<group>"; };
+		88DC4B1A1B8B78AE00422875 /* JobTechOp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTechOp.swift; sourceTree = "<group>"; };
+		88DC4B1B1B8B78AE00422875 /* JobTechOpPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTechOpPlan.swift; sourceTree = "<group>"; };
+		88DC4B1C1B8B78AE00422875 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		88DC4B1D1B8B78AE00422875 /* TechOp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechOp.swift; sourceTree = "<group>"; };
+		88DC4B1E1B8B78AE00422875 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		88DC4B281B8B790200422875 /* APP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
+		88DC4B7A1B8B7B9A00422875 /* UpgradeDatabase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UpgradeDatabase.plist; sourceTree = "<group>"; };
+		88DC4B821B8B89C900422875 /* alter_v8.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v8.sql; sourceTree = "<group>"; };
+		88DC4B831B8B89C900422875 /* alter_v9.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v9.sql; sourceTree = "<group>"; };
+		88DC4B841B8B89C900422875 /* alter_v10.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v10.sql; sourceTree = "<group>"; };
 		88DCAFB31B81101D0036F69B /* UpgradeDatabase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UpgradeDatabase.plist; sourceTree = "<group>"; };
-		88DCAFB51B81BA8B0036F69B /* ARBaseRelationship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARBaseRelationship.h; path = iActiveRecord/ARBaseRelationship.h; sourceTree = "<group>"; };
-		88DCAFB61B81BA8B0036F69B /* ARBaseRelationship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARBaseRelationship.m; path = iActiveRecord/ARBaseRelationship.m; sourceTree = "<group>"; };
-		88DCAFB71B81BA8B0036F69B /* ARColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARColumn.h; path = iActiveRecord/ARColumn.h; sourceTree = "<group>"; };
-		88DCAFB81B81BA8B0036F69B /* ARColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARColumn.m; path = iActiveRecord/ARColumn.m; sourceTree = "<group>"; };
-		88DCAFB91B81BA8B0036F69B /* ARColumn_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARColumn_Private.h; path = iActiveRecord/ARColumn_Private.h; sourceTree = "<group>"; };
-		88DCAFBA1B81BA8B0036F69B /* ARDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARDatabaseManager.h; path = iActiveRecord/ARDatabaseManager.h; sourceTree = "<group>"; };
-		88DCAFBB1B81BA8B0036F69B /* ARDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARDatabaseManager.m; path = iActiveRecord/ARDatabaseManager.m; sourceTree = "<group>"; };
-		88DCAFBC1B81BA8B0036F69B /* AREnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AREnum.h; path = iActiveRecord/AREnum.h; sourceTree = "<group>"; };
-		88DCAFBD1B81BA8B0036F69B /* ARError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARError.h; path = iActiveRecord/ARError.h; sourceTree = "<group>"; };
-		88DCAFBE1B81BA8B0036F69B /* ARError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARError.m; path = iActiveRecord/ARError.m; sourceTree = "<group>"; };
-		88DCAFBF1B81BA8B0036F69B /* ARErrorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARErrorHelper.h; path = iActiveRecord/ARErrorHelper.h; sourceTree = "<group>"; };
-		88DCAFC01B81BA8B0036F69B /* ARException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARException.h; path = iActiveRecord/ARException.h; sourceTree = "<group>"; };
-		88DCAFC11B81BA8B0036F69B /* ARException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARException.m; path = iActiveRecord/ARException.m; sourceTree = "<group>"; };
-		88DCAFC21B81BA8B0036F69B /* ARLazyFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARLazyFetcher.h; path = iActiveRecord/ARLazyFetcher.h; sourceTree = "<group>"; };
-		88DCAFC31B81BA8B0036F69B /* ARLazyFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARLazyFetcher.m; path = iActiveRecord/ARLazyFetcher.m; sourceTree = "<group>"; };
-		88DCAFC41B81BA8B0036F69B /* ARLazyFetcher_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARLazyFetcher_Private.h; path = iActiveRecord/ARLazyFetcher_Private.h; sourceTree = "<group>"; };
-		88DCAFC51B81BA8B0036F69B /* ARMigrationsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARMigrationsHelper.h; path = iActiveRecord/ARMigrationsHelper.h; sourceTree = "<group>"; };
-		88DCAFC61B81BA8B0036F69B /* ARRelationBelongsTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRelationBelongsTo.h; path = iActiveRecord/ARRelationBelongsTo.h; sourceTree = "<group>"; };
-		88DCAFC71B81BA8B0036F69B /* ARRelationBelongsTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARRelationBelongsTo.m; path = iActiveRecord/ARRelationBelongsTo.m; sourceTree = "<group>"; };
-		88DCAFC81B81BA8B0036F69B /* ARRelationHasMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRelationHasMany.h; path = iActiveRecord/ARRelationHasMany.h; sourceTree = "<group>"; };
-		88DCAFC91B81BA8B0036F69B /* ARRelationHasMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARRelationHasMany.m; path = iActiveRecord/ARRelationHasMany.m; sourceTree = "<group>"; };
-		88DCAFCA1B81BA8B0036F69B /* ARRelationHasManyThrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRelationHasManyThrough.h; path = iActiveRecord/ARRelationHasManyThrough.h; sourceTree = "<group>"; };
-		88DCAFCB1B81BA8B0036F69B /* ARRelationHasManyThrough.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARRelationHasManyThrough.m; path = iActiveRecord/ARRelationHasManyThrough.m; sourceTree = "<group>"; };
-		88DCAFCC1B81BA8B0036F69B /* ARRelationshipsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRelationshipsHelper.h; path = iActiveRecord/ARRelationshipsHelper.h; sourceTree = "<group>"; };
-		88DCAFCD1B81BA8B0036F69B /* ARRepresentationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRepresentationProtocol.h; path = iActiveRecord/ARRepresentationProtocol.h; sourceTree = "<group>"; };
-		88DCAFCE1B81BA8B0036F69B /* ARSchemaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSchemaManager.h; path = iActiveRecord/ARSchemaManager.h; sourceTree = "<group>"; };
-		88DCAFCF1B81BA8B0036F69B /* ARSchemaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSchemaManager.m; path = iActiveRecord/ARSchemaManager.m; sourceTree = "<group>"; };
-		88DCAFD01B81BA8B0036F69B /* ARValidatableProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARValidatableProtocol.h; path = iActiveRecord/ARValidatableProtocol.h; sourceTree = "<group>"; };
-		88DCAFD11B81BA8B0036F69B /* ARValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARValidation.h; path = iActiveRecord/ARValidation.h; sourceTree = "<group>"; };
-		88DCAFD21B81BA8B0036F69B /* ARValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARValidation.m; path = iActiveRecord/ARValidation.m; sourceTree = "<group>"; };
-		88DCAFD31B81BA8B0036F69B /* ARValidationsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARValidationsHelper.h; path = iActiveRecord/ARValidationsHelper.h; sourceTree = "<group>"; };
-		88DCAFD41B81BA8B0036F69B /* ARValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARValidator.h; path = iActiveRecord/ARValidator.h; sourceTree = "<group>"; };
-		88DCAFD51B81BA8B0036F69B /* ARValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARValidator.m; path = iActiveRecord/ARValidator.m; sourceTree = "<group>"; };
-		88DCAFD61B81BA8B0036F69B /* ARValidatorPresence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARValidatorPresence.h; path = iActiveRecord/ARValidatorPresence.h; sourceTree = "<group>"; };
-		88DCAFD71B81BA8B0036F69B /* ARValidatorPresence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARValidatorPresence.m; path = iActiveRecord/ARValidatorPresence.m; sourceTree = "<group>"; };
-		88DCAFD81B81BA8B0036F69B /* ARValidatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARValidatorProtocol.h; path = iActiveRecord/ARValidatorProtocol.h; sourceTree = "<group>"; };
-		88DCAFD91B81BA8B0036F69B /* ARValidatorUniqueness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARValidatorUniqueness.h; path = iActiveRecord/ARValidatorUniqueness.h; sourceTree = "<group>"; };
-		88DCAFDA1B81BA8B0036F69B /* ARValidatorUniqueness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARValidatorUniqueness.m; path = iActiveRecord/ARValidatorUniqueness.m; sourceTree = "<group>"; };
-		88DCAFDB1B81BA8B0036F69B /* ARWhereStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARWhereStatement.h; path = iActiveRecord/ARWhereStatement.h; sourceTree = "<group>"; };
-		88DCAFDC1B81BA8B0036F69B /* ARWhereStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARWhereStatement.m; path = iActiveRecord/ARWhereStatement.m; sourceTree = "<group>"; };
-		88DCAFDD1B81BA8B0036F69B /* ARWhereStatement_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARWhereStatement_Private.h; path = iActiveRecord/ARWhereStatement_Private.h; sourceTree = "<group>"; };
-		88DCAFDE1B81BA8B0036F69B /* ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveRecord.h; path = iActiveRecord/ActiveRecord.h; sourceTree = "<group>"; };
-		88DCAFDF1B81BA8B0036F69B /* ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveRecord.m; path = iActiveRecord/ActiveRecord.m; sourceTree = "<group>"; };
-		88DCAFE01B81BA8B0036F69B /* ActiveRecord_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveRecord_Private.h; path = iActiveRecord/ActiveRecord_Private.h; sourceTree = "<group>"; };
-		88DCAFE11B81BA8B0036F69B /* NSArray+objectsAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+objectsAccessors.h"; path = "iActiveRecord/NSArray+objectsAccessors.h"; sourceTree = "<group>"; };
-		88DCAFE21B81BA8B0036F69B /* NSArray+objectsAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+objectsAccessors.m"; path = "iActiveRecord/NSArray+objectsAccessors.m"; sourceTree = "<group>"; };
-		88DCAFE31B81BA8B0036F69B /* NSArray+toSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+toSql.h"; path = "iActiveRecord/NSArray+toSql.h"; sourceTree = "<group>"; };
-		88DCAFE41B81BA8B0036F69B /* NSArray+toSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+toSql.m"; path = "iActiveRecord/NSArray+toSql.m"; sourceTree = "<group>"; };
-		88DCAFE51B81BA8B0036F69B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "iActiveRecord/NSData+Base64.h"; sourceTree = "<group>"; };
-		88DCAFE61B81BA8B0036F69B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "iActiveRecord/NSData+Base64.m"; sourceTree = "<group>"; };
-		88DCAFE71B81BA8B0036F69B /* NSData+isPresented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+isPresented.h"; path = "iActiveRecord/NSData+isPresented.h"; sourceTree = "<group>"; };
-		88DCAFE81B81BA8B0036F69B /* NSData+isPresented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+isPresented.m"; path = "iActiveRecord/NSData+isPresented.m"; sourceTree = "<group>"; };
-		88DCAFE91B81BA8B0036F69B /* NSData+sqlRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+sqlRepresentation.h"; path = "iActiveRecord/NSData+sqlRepresentation.h"; sourceTree = "<group>"; };
-		88DCAFEA1B81BA8B0036F69B /* NSData+sqlRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+sqlRepresentation.m"; path = "iActiveRecord/NSData+sqlRepresentation.m"; sourceTree = "<group>"; };
-		88DCAFEB1B81BA8B0036F69B /* NSDate+isPresented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+isPresented.h"; path = "iActiveRecord/NSDate+isPresented.h"; sourceTree = "<group>"; };
-		88DCAFEC1B81BA8B0036F69B /* NSDate+isPresented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+isPresented.m"; path = "iActiveRecord/NSDate+isPresented.m"; sourceTree = "<group>"; };
-		88DCAFED1B81BA8B0036F69B /* NSDate+sqlRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+sqlRepresentation.h"; path = "iActiveRecord/NSDate+sqlRepresentation.h"; sourceTree = "<group>"; };
-		88DCAFEE1B81BA8B0036F69B /* NSDate+sqlRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+sqlRepresentation.m"; path = "iActiveRecord/NSDate+sqlRepresentation.m"; sourceTree = "<group>"; };
-		88DCAFEF1B81BA8B0036F69B /* NSDecimalNumber+isPresented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDecimalNumber+isPresented.h"; path = "iActiveRecord/NSDecimalNumber+isPresented.h"; sourceTree = "<group>"; };
-		88DCAFF01B81BA8B0036F69B /* NSDecimalNumber+isPresented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDecimalNumber+isPresented.m"; path = "iActiveRecord/NSDecimalNumber+isPresented.m"; sourceTree = "<group>"; };
-		88DCAFF11B81BA8B0036F69B /* NSDecimalNumber+sqlRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDecimalNumber+sqlRepresentation.h"; path = "iActiveRecord/NSDecimalNumber+sqlRepresentation.h"; sourceTree = "<group>"; };
-		88DCAFF21B81BA8B0036F69B /* NSDecimalNumber+sqlRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDecimalNumber+sqlRepresentation.m"; path = "iActiveRecord/NSDecimalNumber+sqlRepresentation.m"; sourceTree = "<group>"; };
-		88DCAFF31B81BA8B0036F69B /* NSMutableDictionary+valueToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+valueToArray.h"; path = "iActiveRecord/NSMutableDictionary+valueToArray.h"; sourceTree = "<group>"; };
-		88DCAFF41B81BA8B0036F69B /* NSMutableDictionary+valueToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+valueToArray.m"; path = "iActiveRecord/NSMutableDictionary+valueToArray.m"; sourceTree = "<group>"; };
-		88DCAFF51B81BA8B0036F69B /* NSNumber+isPresented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+isPresented.h"; path = "iActiveRecord/NSNumber+isPresented.h"; sourceTree = "<group>"; };
-		88DCAFF61B81BA8B0036F69B /* NSNumber+isPresented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+isPresented.m"; path = "iActiveRecord/NSNumber+isPresented.m"; sourceTree = "<group>"; };
-		88DCAFF71B81BA8B0036F69B /* NSNumber+sqlRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+sqlRepresentation.h"; path = "iActiveRecord/NSNumber+sqlRepresentation.h"; sourceTree = "<group>"; };
-		88DCAFF81B81BA8B0036F69B /* NSNumber+sqlRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+sqlRepresentation.m"; path = "iActiveRecord/NSNumber+sqlRepresentation.m"; sourceTree = "<group>"; };
-		88DCAFF91B81BA8B0036F69B /* NSSet+toSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+toSql.h"; path = "iActiveRecord/NSSet+toSql.h"; sourceTree = "<group>"; };
-		88DCAFFA1B81BA8B0036F69B /* NSSet+toSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+toSql.m"; path = "iActiveRecord/NSSet+toSql.m"; sourceTree = "<group>"; };
-		88DCAFFB1B81BA8B0036F69B /* NSString+isPresented.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+isPresented.h"; path = "iActiveRecord/NSString+isPresented.h"; sourceTree = "<group>"; };
-		88DCAFFC1B81BA8B0036F69B /* NSString+isPresented.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+isPresented.m"; path = "iActiveRecord/NSString+isPresented.m"; sourceTree = "<group>"; };
-		88DCAFFD1B81BA8B0036F69B /* NSString+lowercaseFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+lowercaseFirst.h"; path = "iActiveRecord/NSString+lowercaseFirst.h"; sourceTree = "<group>"; };
-		88DCAFFE1B81BA8B0036F69B /* NSString+lowercaseFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+lowercaseFirst.m"; path = "iActiveRecord/NSString+lowercaseFirst.m"; sourceTree = "<group>"; };
-		88DCAFFF1B81BA8B0036F69B /* NSString+quotedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+quotedString.h"; path = "iActiveRecord/NSString+quotedString.h"; sourceTree = "<group>"; };
-		88DCB0001B81BA8B0036F69B /* NSString+quotedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+quotedString.m"; path = "iActiveRecord/NSString+quotedString.m"; sourceTree = "<group>"; };
-		88DCB0011B81BA8B0036F69B /* NSString+sqlRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+sqlRepresentation.h"; path = "iActiveRecord/NSString+sqlRepresentation.h"; sourceTree = "<group>"; };
-		88DCB0021B81BA8B0036F69B /* NSString+sqlRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+sqlRepresentation.m"; path = "iActiveRecord/NSString+sqlRepresentation.m"; sourceTree = "<group>"; };
-		88DCB0031B81BA8B0036F69B /* NSString+stringWithEscapedQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+stringWithEscapedQuote.h"; path = "iActiveRecord/NSString+stringWithEscapedQuote.h"; sourceTree = "<group>"; };
-		88DCB0041B81BA8B0036F69B /* NSString+stringWithEscapedQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+stringWithEscapedQuote.m"; path = "iActiveRecord/NSString+stringWithEscapedQuote.m"; sourceTree = "<group>"; };
-		88DCB0051B81BA8B0036F69B /* class_getSubclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = class_getSubclasses.h; path = iActiveRecord/class_getSubclasses.h; sourceTree = "<group>"; };
-		88DCB0061B81BA8B0036F69B /* sqlite3_unicode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3_unicode.c; path = iActiveRecord/deps/sqlite3_unicode.c; sourceTree = "<group>"; };
-		88DCB0071B81BA8B0036F69B /* sqlite3_unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3_unicode.h; path = iActiveRecord/deps/sqlite3_unicode.h; sourceTree = "<group>"; };
-		88DCB0081B81BA8B0036F69B /* iActiveRecord.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = iActiveRecord.xcconfig; sourceTree = "<group>"; };
-		88DCB0091B81BA8B0036F69B /* iActiveRecord-Private.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "iActiveRecord-Private.xcconfig"; sourceTree = "<group>"; };
-		88DCB00A1B81BA8B0036F69B /* iActiveRecord-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iActiveRecord-dummy.m"; sourceTree = "<group>"; };
-		88DCB00B1B81BA8B0036F69B /* iActiveRecord-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iActiveRecord-prefix.pch"; sourceTree = "<group>"; };
 		88DCB0341B81BD4F0036F69B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		88DCB0361B8254860036F69B /* DBAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBAccess.framework; sourceTree = "<group>"; };
 		88DCB03B1B82573D0036F69B /* DBAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DBAccess.h; path = DBAccess.framework/Headers/DBAccess.h; sourceTree = "<group>"; };
@@ -252,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				88DCB0381B8254860036F69B /* DBAccess */,
-				88DCB00D1B81BA8B0036F69B /* iActiveRecord */,
 				883CC6291B79E95600201CBB /* FMDB */,
 			);
 			name = src;
@@ -279,120 +195,27 @@
 		883CC6441B79FA7100201CBB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				88DC4B821B8B89C900422875 /* alter_v8.sql */,
+				88DC4B831B8B89C900422875 /* alter_v9.sql */,
+				88DC4B841B8B89C900422875 /* alter_v10.sql */,
+				88DC4B021B8B774E00422875 /* alter_v2.sql */,
+				88DC4B031B8B774E00422875 /* alter_v3.sql */,
+				88DC4B041B8B774E00422875 /* alter_v4.sql */,
+				88DC4B051B8B774E00422875 /* alter_v5.sql */,
+				88DC4B061B8B774E00422875 /* alter_v6.sql */,
+				88DC4B071B8B774E00422875 /* alter_v7.sql */,
+				88DC4B0B1B8B774E00422875 /* base_v1.sql */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		883CC6461B7AFE2100201CBB /* Support Classes */ = {
 			isa = PBXGroup;
 			children = (
+				88DC4B281B8B790200422875 /* APP.swift */,
 				883CC6471B7AFE5700201CBB /* DatabaseController.swift */,
 			);
-			name = "Support Classes";
-			sourceTree = "<group>";
-		};
-		88DCB00C1B81BA8B0036F69B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				88DCB0081B81BA8B0036F69B /* iActiveRecord.xcconfig */,
-				88DCB0091B81BA8B0036F69B /* iActiveRecord-Private.xcconfig */,
-				88DCB00A1B81BA8B0036F69B /* iActiveRecord-dummy.m */,
-				88DCB00B1B81BA8B0036F69B /* iActiveRecord-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/iActiveRecord";
-			sourceTree = "<group>";
-		};
-		88DCB00D1B81BA8B0036F69B /* iActiveRecord */ = {
-			isa = PBXGroup;
-			children = (
-				88DCAFB51B81BA8B0036F69B /* ARBaseRelationship.h */,
-				88DCAFB61B81BA8B0036F69B /* ARBaseRelationship.m */,
-				88DCAFB71B81BA8B0036F69B /* ARColumn.h */,
-				88DCAFB81B81BA8B0036F69B /* ARColumn.m */,
-				88DCAFB91B81BA8B0036F69B /* ARColumn_Private.h */,
-				88DCAFBA1B81BA8B0036F69B /* ARDatabaseManager.h */,
-				88DCAFBB1B81BA8B0036F69B /* ARDatabaseManager.m */,
-				88DCAFBC1B81BA8B0036F69B /* AREnum.h */,
-				88DCAFBD1B81BA8B0036F69B /* ARError.h */,
-				88DCAFBE1B81BA8B0036F69B /* ARError.m */,
-				88DCAFBF1B81BA8B0036F69B /* ARErrorHelper.h */,
-				88DCAFC01B81BA8B0036F69B /* ARException.h */,
-				88DCAFC11B81BA8B0036F69B /* ARException.m */,
-				88DCAFC21B81BA8B0036F69B /* ARLazyFetcher.h */,
-				88DCAFC31B81BA8B0036F69B /* ARLazyFetcher.m */,
-				88DCAFC41B81BA8B0036F69B /* ARLazyFetcher_Private.h */,
-				88DCAFC51B81BA8B0036F69B /* ARMigrationsHelper.h */,
-				88DCAFC61B81BA8B0036F69B /* ARRelationBelongsTo.h */,
-				88DCAFC71B81BA8B0036F69B /* ARRelationBelongsTo.m */,
-				88DCAFC81B81BA8B0036F69B /* ARRelationHasMany.h */,
-				88DCAFC91B81BA8B0036F69B /* ARRelationHasMany.m */,
-				88DCAFCA1B81BA8B0036F69B /* ARRelationHasManyThrough.h */,
-				88DCAFCB1B81BA8B0036F69B /* ARRelationHasManyThrough.m */,
-				88DCAFCC1B81BA8B0036F69B /* ARRelationshipsHelper.h */,
-				88DCAFCD1B81BA8B0036F69B /* ARRepresentationProtocol.h */,
-				88DCAFCE1B81BA8B0036F69B /* ARSchemaManager.h */,
-				88DCAFCF1B81BA8B0036F69B /* ARSchemaManager.m */,
-				88DCAFD01B81BA8B0036F69B /* ARValidatableProtocol.h */,
-				88DCAFD11B81BA8B0036F69B /* ARValidation.h */,
-				88DCAFD21B81BA8B0036F69B /* ARValidation.m */,
-				88DCAFD31B81BA8B0036F69B /* ARValidationsHelper.h */,
-				88DCAFD41B81BA8B0036F69B /* ARValidator.h */,
-				88DCAFD51B81BA8B0036F69B /* ARValidator.m */,
-				88DCAFD61B81BA8B0036F69B /* ARValidatorPresence.h */,
-				88DCAFD71B81BA8B0036F69B /* ARValidatorPresence.m */,
-				88DCAFD81B81BA8B0036F69B /* ARValidatorProtocol.h */,
-				88DCAFD91B81BA8B0036F69B /* ARValidatorUniqueness.h */,
-				88DCAFDA1B81BA8B0036F69B /* ARValidatorUniqueness.m */,
-				88DCAFDB1B81BA8B0036F69B /* ARWhereStatement.h */,
-				88DCAFDC1B81BA8B0036F69B /* ARWhereStatement.m */,
-				88DCAFDD1B81BA8B0036F69B /* ARWhereStatement_Private.h */,
-				88DCAFDE1B81BA8B0036F69B /* ActiveRecord.h */,
-				88DCAFDF1B81BA8B0036F69B /* ActiveRecord.m */,
-				88DCAFE01B81BA8B0036F69B /* ActiveRecord_Private.h */,
-				88DCAFE11B81BA8B0036F69B /* NSArray+objectsAccessors.h */,
-				88DCAFE21B81BA8B0036F69B /* NSArray+objectsAccessors.m */,
-				88DCAFE31B81BA8B0036F69B /* NSArray+toSql.h */,
-				88DCAFE41B81BA8B0036F69B /* NSArray+toSql.m */,
-				88DCAFE51B81BA8B0036F69B /* NSData+Base64.h */,
-				88DCAFE61B81BA8B0036F69B /* NSData+Base64.m */,
-				88DCAFE71B81BA8B0036F69B /* NSData+isPresented.h */,
-				88DCAFE81B81BA8B0036F69B /* NSData+isPresented.m */,
-				88DCAFE91B81BA8B0036F69B /* NSData+sqlRepresentation.h */,
-				88DCAFEA1B81BA8B0036F69B /* NSData+sqlRepresentation.m */,
-				88DCAFEB1B81BA8B0036F69B /* NSDate+isPresented.h */,
-				88DCAFEC1B81BA8B0036F69B /* NSDate+isPresented.m */,
-				88DCAFED1B81BA8B0036F69B /* NSDate+sqlRepresentation.h */,
-				88DCAFEE1B81BA8B0036F69B /* NSDate+sqlRepresentation.m */,
-				88DCAFEF1B81BA8B0036F69B /* NSDecimalNumber+isPresented.h */,
-				88DCAFF01B81BA8B0036F69B /* NSDecimalNumber+isPresented.m */,
-				88DCAFF11B81BA8B0036F69B /* NSDecimalNumber+sqlRepresentation.h */,
-				88DCAFF21B81BA8B0036F69B /* NSDecimalNumber+sqlRepresentation.m */,
-				88DCAFF31B81BA8B0036F69B /* NSMutableDictionary+valueToArray.h */,
-				88DCAFF41B81BA8B0036F69B /* NSMutableDictionary+valueToArray.m */,
-				88DCAFF51B81BA8B0036F69B /* NSNumber+isPresented.h */,
-				88DCAFF61B81BA8B0036F69B /* NSNumber+isPresented.m */,
-				88DCAFF71B81BA8B0036F69B /* NSNumber+sqlRepresentation.h */,
-				88DCAFF81B81BA8B0036F69B /* NSNumber+sqlRepresentation.m */,
-				88DCAFF91B81BA8B0036F69B /* NSSet+toSql.h */,
-				88DCAFFA1B81BA8B0036F69B /* NSSet+toSql.m */,
-				88DCAFFB1B81BA8B0036F69B /* NSString+isPresented.h */,
-				88DCAFFC1B81BA8B0036F69B /* NSString+isPresented.m */,
-				88DCAFFD1B81BA8B0036F69B /* NSString+lowercaseFirst.h */,
-				88DCAFFE1B81BA8B0036F69B /* NSString+lowercaseFirst.m */,
-				88DCAFFF1B81BA8B0036F69B /* NSString+quotedString.h */,
-				88DCB0001B81BA8B0036F69B /* NSString+quotedString.m */,
-				88DCB0011B81BA8B0036F69B /* NSString+sqlRepresentation.h */,
-				88DCB0021B81BA8B0036F69B /* NSString+sqlRepresentation.m */,
-				88DCB0031B81BA8B0036F69B /* NSString+stringWithEscapedQuote.h */,
-				88DCB0041B81BA8B0036F69B /* NSString+stringWithEscapedQuote.m */,
-				88DCB0051B81BA8B0036F69B /* class_getSubclasses.h */,
-				88DCB0061B81BA8B0036F69B /* sqlite3_unicode.c */,
-				88DCB0071B81BA8B0036F69B /* sqlite3_unicode.h */,
-				88DCB00C1B81BA8B0036F69B /* Support Files */,
-			);
-			name = iActiveRecord;
-			path = ../Pods/iActiveRecord;
+			path = "Support Classes";
 			sourceTree = "<group>";
 		};
 		88DCB0371B8254860036F69B /* Frameworks */ = {
@@ -416,10 +239,19 @@
 		88DCB03A1B8254BE0036F69B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				88DC4B161B8B78AE00422875 /* Brigade.swift */,
+				88DC4B171B8B78AE00422875 /* BrigadeWorker.swift */,
+				88DC4B181B8B78AE00422875 /* Job.swift */,
+				88DC4B191B8B78AE00422875 /* JobPlan.swift */,
+				88DC4B1A1B8B78AE00422875 /* JobTechOp.swift */,
+				88DC4B1B1B8B78AE00422875 /* JobTechOpPlan.swift */,
+				88DC4B1C1B8B78AE00422875 /* Skill.swift */,
+				88DC4B1D1B8B78AE00422875 /* TechOp.swift */,
+				88DC4B1E1B8B78AE00422875 /* User.swift */,
 				88DCB0341B81BD4F0036F69B /* Worker.swift */,
 				88DCB03C1B82FE260036F69B /* WorkerSkill.swift */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		88DE66621B748794004D7F15 = {
@@ -445,6 +277,7 @@
 		88DE666D1B748794004D7F15 /* Agentum */ = {
 			isa = PBXGroup;
 			children = (
+				88DC4B7A1B8B7B9A00422875 /* UpgradeDatabase.plist */,
 				88DCB03A1B8254BE0036F69B /* Entities */,
 				883CC6461B7AFE2100201CBB /* Support Classes */,
 				883CC6441B79FA7100201CBB /* Resources */,
@@ -582,10 +415,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DCAFB41B81101D0036F69B /* UpgradeDatabase.plist in Resources */,
-				88DCB0321B81BA8B0036F69B /* iActiveRecord-Private.xcconfig in Resources */,
+				88DC4B851B8B89C900422875 /* alter_v8.sql in Resources */,
+				88DC4B0D1B8B774E00422875 /* alter_v3.sql in Resources */,
 				88DE66761B748794004D7F15 /* Main.storyboard in Resources */,
+				88DC4B861B8B89C900422875 /* alter_v9.sql in Resources */,
+				88DC4B0F1B8B774E00422875 /* alter_v5.sql in Resources */,
+				88DC4B0E1B8B774E00422875 /* alter_v4.sql in Resources */,
 				88DE667B1B748794004D7F15 /* LaunchScreen.xib in Resources */,
-				88DCB0311B81BA8B0036F69B /* iActiveRecord.xcconfig in Resources */,
+				88DC4B0C1B8B774E00422875 /* alter_v2.sql in Resources */,
+				88DC4B151B8B774E00422875 /* base_v1.sql in Resources */,
+				88DC4B101B8B774E00422875 /* alter_v6.sql in Resources */,
+				88DC4B7B1B8B7B9A00422875 /* UpgradeDatabase.plist in Resources */,
+				88DC4B111B8B774E00422875 /* alter_v7.sql in Resources */,
+				88DC4B871B8B89C900422875 /* alter_v10.sql in Resources */,
 				88DE66781B748794004D7F15 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,58 +479,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88DCB02E1B81BA8B0036F69B /* NSString+sqlRepresentation.m in Sources */,
-				88DCB0161B81BA8B0036F69B /* ARRelationHasManyThrough.m in Sources */,
-				88DCB0151B81BA8B0036F69B /* ARRelationHasMany.m in Sources */,
-				88DCB02B1B81BA8B0036F69B /* NSString+isPresented.m in Sources */,
 				883CC60E1B74AF7700201CBB /* WorkCell.swift in Sources */,
-				88DCB01C1B81BA8B0036F69B /* ARWhereStatement.m in Sources */,
-				88DCB0171B81BA8B0036F69B /* ARSchemaManager.m in Sources */,
 				88DE66731B748794004D7F15 /* ViewController.swift in Sources */,
-				88DCB0221B81BA8B0036F69B /* NSData+sqlRepresentation.m in Sources */,
-				88DCB01D1B81BA8B0036F69B /* ActiveRecord.m in Sources */,
-				88DCB0271B81BA8B0036F69B /* NSMutableDictionary+valueToArray.m in Sources */,
-				88DCB02D1B81BA8B0036F69B /* NSString+quotedString.m in Sources */,
-				88DCB02A1B81BA8B0036F69B /* NSSet+toSql.m in Sources */,
-				88DCB0121B81BA8B0036F69B /* ARException.m in Sources */,
-				88DCB01F1B81BA8B0036F69B /* NSArray+toSql.m in Sources */,
 				883CC6101B775B8100201CBB /* OperationsViewController.swift in Sources */,
-				88DCB01E1B81BA8B0036F69B /* NSArray+objectsAccessors.m in Sources */,
-				88DCB0331B81BA8B0036F69B /* iActiveRecord-dummy.m in Sources */,
-				88DCB00E1B81BA8B0036F69B /* ARBaseRelationship.m in Sources */,
+				88DC4B1F1B8B78AE00422875 /* Brigade.swift in Sources */,
+				88DC4B201B8B78AE00422875 /* BrigadeWorker.swift in Sources */,
+				88DC4B231B8B78AE00422875 /* JobTechOp.swift in Sources */,
 				88DE66711B748794004D7F15 /* AppDelegate.swift in Sources */,
+				88DC4B241B8B78AE00422875 /* JobTechOpPlan.swift in Sources */,
 				883CC5FF1B749C2800201CBB /* WorksViewController.swift in Sources */,
-				88DCB0201B81BA8B0036F69B /* NSData+Base64.m in Sources */,
-				88DCB0211B81BA8B0036F69B /* NSData+isPresented.m in Sources */,
-				88DCB01A1B81BA8B0036F69B /* ARValidatorPresence.m in Sources */,
-				88DCB0241B81BA8B0036F69B /* NSDate+sqlRepresentation.m in Sources */,
 				88DCB03D1B82FE260036F69B /* WorkerSkill.swift in Sources */,
+				88DC4B261B8B78AE00422875 /* TechOp.swift in Sources */,
 				88DCB0351B81BD4F0036F69B /* Worker.swift in Sources */,
-				88DCB01B1B81BA8B0036F69B /* ARValidatorUniqueness.m in Sources */,
-				88DCB0301B81BA8B0036F69B /* sqlite3_unicode.c in Sources */,
-				88DCB0291B81BA8B0036F69B /* NSNumber+sqlRepresentation.m in Sources */,
-				88DCB0181B81BA8B0036F69B /* ARValidation.m in Sources */,
-				88DCB00F1B81BA8B0036F69B /* ARColumn.m in Sources */,
+				88DC4B211B8B78AE00422875 /* Job.swift in Sources */,
+				88DC4B221B8B78AE00422875 /* JobPlan.swift in Sources */,
+				88DC4B251B8B78AE00422875 /* Skill.swift in Sources */,
 				883CC6361B79E96F00201CBB /* FMDatabaseAdditions.m in Sources */,
-				88DCB0101B81BA8B0036F69B /* ARDatabaseManager.m in Sources */,
-				88DCB0261B81BA8B0036F69B /* NSDecimalNumber+sqlRepresentation.m in Sources */,
-				88DCB0141B81BA8B0036F69B /* ARRelationBelongsTo.m in Sources */,
-				88DCB0191B81BA8B0036F69B /* ARValidator.m in Sources */,
-				88DCB0131B81BA8B0036F69B /* ARLazyFetcher.m in Sources */,
-				88DCB0111B81BA8B0036F69B /* ARError.m in Sources */,
-				88DCB02C1B81BA8B0036F69B /* NSString+lowercaseFirst.m in Sources */,
+				88DC4B271B8B78AE00422875 /* User.swift in Sources */,
 				883CC6481B7AFE5800201CBB /* DatabaseController.swift in Sources */,
 				883CC63F1B79F42300201CBB /* FilesViewController.swift in Sources */,
 				883CC6391B79E96F00201CBB /* FMResultSet.m in Sources */,
 				883CC6121B7765A500201CBB /* WorkInfoViewController.swift in Sources */,
-				88DCB0231B81BA8B0036F69B /* NSDate+isPresented.m in Sources */,
+				88DC4B291B8B790200422875 /* APP.swift in Sources */,
 				883CC6371B79E96F00201CBB /* FMDatabasePool.m in Sources */,
 				883CC6381B79E96F00201CBB /* FMDatabaseQueue.m in Sources */,
 				883CC6141B77CA6500201CBB /* OperationViewCell.swift in Sources */,
-				88DCB0251B81BA8B0036F69B /* NSDecimalNumber+isPresented.m in Sources */,
-				88DCB0281B81BA8B0036F69B /* NSNumber+isPresented.m in Sources */,
 				883CC6351B79E96F00201CBB /* FMDatabase.m in Sources */,
-				88DCB02F1B81BA8B0036F69B /* NSString+stringWithEscapedQuote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,25 +14,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>iActiveRecord.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>35E97D2F24646C109C982E4B8462F078</key>
+		<key>332CF066EFCF6E635E5569ADECC3928B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DCBB31E385D9DA9ECFB64E9C64755D7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AC5B9BAA5AD6080AD9B37FCE41A1E5AF</key>
+		<key>4D5EB434E7C927FF3E809A7D2A4B727B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

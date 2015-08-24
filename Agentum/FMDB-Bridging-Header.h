@@ -10,7 +10,6 @@
 #define Agentum_FMDB_Bridging_Header_h
 
 #import "FMDB.h"
-#import "ActiveRecord.h"
 #import "DBAccess.h"
 
 #endif

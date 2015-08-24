@@ -1,6 +1,6 @@
 FRAMEWORK_SEARCH_PATHS = $(SRCROOT)/DBAccess/ "$(PODS_ROOT)/DBAccess"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) SQLITE_CORE SQLITE_ENABLE_UNICODE $(inherited) SQLITE_CORE SQLITE_ENABLE_UNICODE
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DBAccess" "${PODS_ROOT}/Headers/Public/DBAccess/DBAccess" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/iActiveRecord"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/DBAccess" -isystem "${PODS_ROOT}/Headers/Public/DBAccess/DBAccess" -isystem "${PODS_ROOT}/Headers/Public/FMDB" -isystem "${PODS_ROOT}/Headers/Public/iActiveRecord"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"FMDB" -l"iActiveRecord" -l"sqlite3" -framework "DBAccess" -framework "Foundation"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DBAccess" "${PODS_ROOT}/Headers/Public/DBAccess/DBAccess" "${PODS_ROOT}/Headers/Public/FMDB"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/DBAccess" -isystem "${PODS_ROOT}/Headers/Public/DBAccess/DBAccess" -isystem "${PODS_ROOT}/Headers/Public/FMDB"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"FMDB" -l"sqlite3" -framework "DBAccess" -framework "Foundation"
 PODS_ROOT = ${SRCROOT}/Pods

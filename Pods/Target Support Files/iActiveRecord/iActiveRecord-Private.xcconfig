@@ -1,6 +1,0 @@
-#include "iActiveRecord.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ${IACTIVERECORD_GCC_PREPROCESSOR_DEFINITIONS}
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/iActiveRecord" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/DBAccess" "${PODS_ROOT}/Headers/Public/DBAccess/DBAccess" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/iActiveRecord"
-OTHER_LDFLAGS = ${IACTIVERECORD_OTHER_LDFLAGS}
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES

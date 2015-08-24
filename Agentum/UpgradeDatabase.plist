@@ -3,16 +3,64 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>updateFileName</key>
-		<string>20141203-v1-base</string>
 		<key>version</key>
-		<string>1.0</string>
+		<integer>1</integer>
+		<key>updateFileName</key>
+		<string>base_v1</string>
 	</dict>
 	<dict>
-		<key>updateFileName</key>
-		<string>20141203-v2-update</string>
 		<key>version</key>
-		<string>2.0</string>
+		<integer>2</integer>
+		<key>updateFileName</key>
+		<string>alter_v2</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>3</integer>
+		<key>updateFileName</key>
+		<string>alter_v3</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>4</integer>
+		<key>updateFileName</key>
+		<string>alter_v4</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>5</integer>
+		<key>updateFileName</key>
+		<string>alter_v5</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>6</integer>
+		<key>updateFileName</key>
+		<string>alter_v6</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>7</integer>
+		<key>updateFileName</key>
+		<string>alter_v7</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>8</integer>
+		<key>updateFileName</key>
+		<string>alter_v8</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>9</integer>
+		<key>updateFileName</key>
+		<string>alter_v9</string>
+	</dict>
+	<dict>
+		<key>version</key>
+		<integer>10</integer>
+		<key>updateFileName</key>
+		<string>alter_v10</string>
 	</dict>
 </array>
 </plist>

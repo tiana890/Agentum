@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4DFA77FD-2127-4342-8718-16066631F062</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Agentum</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6751AEABCF63618E73E4B9E646BD6A6AE21EC146</key>
+		<string>https://github.com/tiana890/Agentum.git</string>
+		<key>84CA92746146BA159305DFF47B21D85DDDA18715</key>
+		<string>https://github.com/tiana890/DBAccessInUse.git</string>
+		<key>B11294458176DC7F59914BCCE36D80A1272254E4</key>
+		<string>https://github.com/tiana890/Agentum.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Agentum.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6751AEABCF63618E73E4B9E646BD6A6AE21EC146</key>
+		<string>..</string>
+		<key>84CA92746146BA159305DFF47B21D85DDDA18715</key>
+		<string>../../DBAccessInUse</string>
+		<key>B11294458176DC7F59914BCCE36D80A1272254E4</key>
+		<string>..Agentum</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tiana890/Agentum.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6751AEABCF63618E73E4B9E646BD6A6AE21EC146</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6751AEABCF63618E73E4B9E646BD6A6AE21EC146</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Agentum</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B11294458176DC7F59914BCCE36D80A1272254E4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AgentumAgentum</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>84CA92746146BA159305DFF47B21D85DDDA18715</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DBAccessInUse</string>
+		</dict>
+	</array>
+</dict>
+</plist>

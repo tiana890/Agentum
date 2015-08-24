@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70BE49272FDCDE3FCD099B58"
+               BlueprintIdentifier = "3FB643C0B86C0A43CF471E59"
                BuildableName = "libPods-Agentum.a"
                BlueprintName = "Pods-Agentum"
                ReferencedContainer = "container:Pods.xcodeproj">

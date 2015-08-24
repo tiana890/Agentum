@@ -53,7 +53,7 @@ class DatabaseController: NSObject {
     
     func getWorkers()
     {
-        self.runFetchForClass(Worker.classForCoder(), fetchBlock: { (database) -> FMResultSet in
+        /*self.runFetchForClass(Worker.classForCoder(), fetchBlock: { (database) -> FMResultSet in
             //res = self.database?.executeQuery("select * from Worker", withArgumentsInArray: nil)
             
             if let res = self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil){
@@ -70,6 +70,7 @@ class DatabaseController: NSObject {
             return nil;
            
             }, fetchResultsBlock: ())
+*/
     }
     
     

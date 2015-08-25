@@ -12,4 +12,6 @@ import UIKit
 class Brigade: DBObject {
     dynamic var Sunc: NSNumber?
     dynamic var Name: NSString?
+    
+    
 }

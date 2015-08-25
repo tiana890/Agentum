@@ -8,19 +8,15 @@
 
 import UIKit
 
-class AuthorizationViewController: UIViewController, UITextFieldDelegate{
+class AuthorizationViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate{
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet var scroll: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(keyboardWillAppear()), name: UIKeyboardWillShowNotification, object: nil)
-        // Do any additional setup after loading the view.
-    }
-
-    func keyboardWillAppear(){
-        println("Keyboard will appear")
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,15 +25,37 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func authorize(sender: UIButton) {
-        var result = User.authorize("frodo", password: "123")
+        login.resignFirstResponder()
+        password.resignFirstResponder()
+
+        var result = User.authorize(self.login.text, password: self.password.text.md5)
+        if result == true{
+            self.performSegueWithIdentifier("modalSegue", sender: self)
+        }
+        else{
+            var alert = UIAlertController(title: nil, message: "Неверный логин или пароль", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
         
     }
 
     // MARK: -UITextFieldDelegate
     func textFieldDidBeginEditing(textField: UITextField) {
-        
+        scroll.setContentOffset(CGPointMake(0, 100), animated: true)
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        scroll.setContentOffset(CGPointMake(0, 0), animated: true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
     
     /*
     // MARK: - Navigation

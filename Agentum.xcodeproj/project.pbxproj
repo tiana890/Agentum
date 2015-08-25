@@ -43,6 +43,9 @@
 		88DC4B851B8B89C900422875 /* alter_v8.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B821B8B89C900422875 /* alter_v8.sql */; };
 		88DC4B861B8B89C900422875 /* alter_v9.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B831B8B89C900422875 /* alter_v9.sql */; };
 		88DC4B871B8B89C900422875 /* alter_v10.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B841B8B89C900422875 /* alter_v10.sql */; };
+		88DC4B8A1B8CB85400422875 /* vizirBase.db in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B891B8CB85400422875 /* vizirBase.db */; };
+		88DC4B8C1B8CD07E00422875 /* JobReposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B8B1B8CD07E00422875 /* JobReposit.swift */; };
+		88DC4B8E1B8CD15E00422875 /* OperationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC4B8D1B8CD15E00422875 /* OperationHelper.swift */; };
 		88DCAFB41B81101D0036F69B /* UpgradeDatabase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88DCAFB31B81101D0036F69B /* UpgradeDatabase.plist */; };
 		88DCB0351B81BD4F0036F69B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB0341B81BD4F0036F69B /* Worker.swift */; };
 		88DCB0391B8254860036F69B /* DBAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DCB0361B8254860036F69B /* DBAccess.framework */; };
@@ -111,6 +114,9 @@
 		88DC4B821B8B89C900422875 /* alter_v8.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v8.sql; sourceTree = "<group>"; };
 		88DC4B831B8B89C900422875 /* alter_v9.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v9.sql; sourceTree = "<group>"; };
 		88DC4B841B8B89C900422875 /* alter_v10.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v10.sql; sourceTree = "<group>"; };
+		88DC4B891B8CB85400422875 /* vizirBase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = vizirBase.db; sourceTree = "<group>"; };
+		88DC4B8B1B8CD07E00422875 /* JobReposit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobReposit.swift; sourceTree = "<group>"; };
+		88DC4B8D1B8CD15E00422875 /* OperationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationHelper.swift; sourceTree = "<group>"; };
 		88DCAFB31B81101D0036F69B /* UpgradeDatabase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UpgradeDatabase.plist; sourceTree = "<group>"; };
 		88DCB0341B81BD4F0036F69B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		88DCB0361B8254860036F69B /* DBAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DBAccess.framework; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 		883CC6441B79FA7100201CBB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				88DC4B891B8CB85400422875 /* vizirBase.db */,
 				88DC4B821B8B89C900422875 /* alter_v8.sql */,
 				88DC4B831B8B89C900422875 /* alter_v9.sql */,
 				88DC4B841B8B89C900422875 /* alter_v10.sql */,
@@ -218,6 +225,8 @@
 			children = (
 				88DC4B281B8B790200422875 /* APP.swift */,
 				883CC6471B7AFE5700201CBB /* DatabaseController.swift */,
+				88DC4B8B1B8CD07E00422875 /* JobReposit.swift */,
+				88DC4B8D1B8CD15E00422875 /* OperationHelper.swift */,
 			);
 			path = "Support Classes";
 			sourceTree = "<group>";
@@ -435,6 +444,7 @@
 				88DC4B111B8B774E00422875 /* alter_v7.sql in Resources */,
 				88DC4B871B8B89C900422875 /* alter_v10.sql in Resources */,
 				88DE66781B748794004D7F15 /* Images.xcassets in Resources */,
+				88DC4B8A1B8CB85400422875 /* vizirBase.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,10 +506,12 @@
 				88DC4B241B8B78AE00422875 /* JobTechOpPlan.swift in Sources */,
 				883CC5FF1B749C2800201CBB /* WorksViewController.swift in Sources */,
 				88DCB03D1B82FE260036F69B /* WorkerSkill.swift in Sources */,
+				88DC4B8E1B8CD15E00422875 /* OperationHelper.swift in Sources */,
 				88DC4B261B8B78AE00422875 /* TechOp.swift in Sources */,
 				88DCB0351B81BD4F0036F69B /* Worker.swift in Sources */,
 				88DC4B211B8B78AE00422875 /* Job.swift in Sources */,
 				88DC4B221B8B78AE00422875 /* JobPlan.swift in Sources */,
+				88DC4B8C1B8CD07E00422875 /* JobReposit.swift in Sources */,
 				4CE3C75A1B8C489700D57841 /* String+md5.swift in Sources */,
 				88DC4B251B8B78AE00422875 /* Skill.swift in Sources */,
 				883CC6361B79E96F00201CBB /* FMDatabaseAdditions.m in Sources */,

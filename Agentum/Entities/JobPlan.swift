@@ -15,4 +15,5 @@ class JobPlan: DBObject {
     dynamic var StartingMoment: NSString?
     dynamic var Ord: NSNumber?
     dynamic var Sync: NSNumber?
+    
 }

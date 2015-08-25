@@ -17,13 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DBDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         //init things
-        let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as? String
-        let path = documentsFolder!.stringByAppendingPathComponent("vizirBase.db")
-        //let path = NSBundle.mainBundle().pathForResource("vizirBase", ofType: "db")
+        //let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as? String
+        //let path = documentsFolder!.stringByAppendingPathComponent("vizirBase.db")
+        let path = NSBundle.mainBundle().pathForResource("vizirBase", ofType: "db")
         
         var databaseController = DatabaseController()
         
-        databaseController.initWithDatabase(path)
+        databaseController.initWithDatabase(path!)
         
         if !databaseController.database!.open() {
             println("Unable to open database")
@@ -39,6 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DBDelegate {
         return true
     }
     
+    func getCustomSettings() -> DBAccessSettings! {
+        var settings = DBAccessSettings()
+        let path = NSBundle.mainBundle().pathForResource("vizirBase", ofType: "db")
+        let dbPath = path?.stringByDeletingLastPathComponent
+        println(dbPath)
+        settings.defaultDatabaseName = "vizirBase"
+        settings.databaseLocation = dbPath
+        return settings
+    }
+
+    func databaseOpened() {
+        println("Database successfully opened")
+    }
+
     func databaseError(error: DBError!) {
         println("Error description = " + error.errorMessage!)
     }

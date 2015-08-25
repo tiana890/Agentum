@@ -13,7 +13,8 @@ class APP {
     var worker: Worker?
     var user: User?
     var brigade: Brigade?
-    var brigadeWorker: BrigadeWorker?
+    var brigadeIDs: Array<NSNumber>?
+    var jobReposit: JobReposit?
     
     static func i() -> APP{
         struct Static {

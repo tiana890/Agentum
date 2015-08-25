@@ -16,13 +16,15 @@ class User: DBObject {
     dynamic var id_Worker: NSNumber?
     
     static func authorize(login: String, password: String) -> Bool{
-        var query = User.query().whereWithFormat("login = %@ and password = %@", withParameters: [login, password.md5])
+        var query = User.query().whereWithFormat("login = %@ and password = %@", withParameters: [login, password])
         
         var resSet = query.fetch() as DBResultSet
         
         if resSet.count > 0 {
             var user = resSet[0] as! User
             APP.i().user = user
+            Worker.saveWorkerBy(user)
+            BrigadeWorker.saveBrigadeIDsWithUser(user)
         }
         
         if resSet.count > 0{

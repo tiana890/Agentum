@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DBDelegate {
         // Override point for customization after application launch.
         //init things
         let documentsFolder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as? String
-        let path = documentsFolder!.stringByAppendingPathComponent("test.db")
+        let path = documentsFolder!.stringByAppendingPathComponent("vizirBase.db")
+        //let path = NSBundle.mainBundle().pathForResource("vizirBase", ofType: "db")
         
         var databaseController = DatabaseController()
         
@@ -28,35 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DBDelegate {
             println("Unable to open database")
         }
         
-        
-        databaseController.upgradeDatabaseIfRequired()
-        
+        //databaseController.upgradeDatabaseIfRequired()
         
         /* start the DBAccess engine by specifying the delegate and opening a database connection */
         DBAccess.setDelegate(self)
-        DBAccess.openDatabaseNamed("test")
+        DBAccess.openDatabaseNamed("vizirBase")
         DBAccess.setPersistSynthesizedProperties(true)
         
-        var w = Worker.new()
-        w.Photo = "photo.png"
-        w.FirstName = "Christina"
-        w.LastName = "Ivina"
-        w.MiddleName = "Ig"
-        w.MobilePhone = "6384573495"
-        w.HomeAddress = "Moldavskaya - 8"
-        w.HomePhone = "3463746"
-        w.IsWorkingNow = 0;
-        w.JobType = "fulltime"
-        w.Birthday = "12.08.00"
-        w.OtherContacts = "contacts"
-        w.Email = "ivina@gmail.com"
-        w.commit()
-
         return true
     }
     
     func databaseError(error: DBError!) {
-        println("Error description = " + error.description)
+        println("Error description = " + error.errorMessage!)
     }
     
     func applicationWillResignActive(application: UIApplication) {

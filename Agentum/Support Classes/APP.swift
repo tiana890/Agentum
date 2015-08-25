@@ -15,7 +15,7 @@ class APP {
     var brigade: Brigade?
     var brigadeWorker: BrigadeWorker?
     
-    func i() -> APP{
+    static func i() -> APP{
         struct Static {
             static var onceToken : dispatch_once_t = 0
             static var instance : APP? = nil

@@ -11,5 +11,6 @@
 
 #import "FMDB.h"
 #import "DBAccess.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 #endif

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CE3C7581B8C3EC700D57841 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */; };
+		4CE3C75A1B8C489700D57841 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7591B8C489700D57841 /* String+md5.swift */; };
 		883CC5FF1B749C2800201CBB /* WorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC5FE1B749C2800201CBB /* WorksViewController.swift */; };
 		883CC60E1B74AF7700201CBB /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC60D1B74AF7700201CBB /* WorkCell.swift */; };
 		883CC6101B775B8100201CBB /* OperationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC60F1B775B8100201CBB /* OperationsViewController.swift */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		4CE3C7591B8C489700D57841 /* String+md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
 		6E38F212FD2F2B7D9EF9079D /* libPods-Agentum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agentum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		883CC5FE1B749C2800201CBB /* WorksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksViewController.swift; sourceTree = "<group>"; };
 		883CC60D1B74AF7700201CBB /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				883CC6281B79E94E00201CBB /* src */,
 				883CC60C1B74AF6C00201CBB /* Cells */,
 				88DE66701B748794004D7F15 /* AppDelegate.swift */,
+				4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */,
 				883CC5FE1B749C2800201CBB /* WorksViewController.swift */,
 				88DE66721B748794004D7F15 /* ViewController.swift */,
 				883CC6111B7765A500201CBB /* WorkInfoViewController.swift */,
@@ -294,6 +299,7 @@
 				88DE66791B748794004D7F15 /* LaunchScreen.xib */,
 				88DE666E1B748794004D7F15 /* Supporting Files */,
 				883CC63B1B79ED3E00201CBB /* FMDB-Bridging-Header.h */,
+				4CE3C7591B8C489700D57841 /* String+md5.swift */,
 			);
 			path = Agentum;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE3C7581B8C3EC700D57841 /* AuthorizationViewController.swift in Sources */,
 				883CC60E1B74AF7700201CBB /* WorkCell.swift in Sources */,
 				88DE66731B748794004D7F15 /* ViewController.swift in Sources */,
 				883CC6101B775B8100201CBB /* OperationsViewController.swift in Sources */,
@@ -493,6 +500,7 @@
 				88DCB0351B81BD4F0036F69B /* Worker.swift in Sources */,
 				88DC4B211B8B78AE00422875 /* Job.swift in Sources */,
 				88DC4B221B8B78AE00422875 /* JobPlan.swift in Sources */,
+				4CE3C75A1B8C489700D57841 /* String+md5.swift in Sources */,
 				88DC4B251B8B78AE00422875 /* Skill.swift in Sources */,
 				883CC6361B79E96F00201CBB /* FMDatabaseAdditions.m in Sources */,
 				88DC4B271B8B78AE00422875 /* User.swift in Sources */,

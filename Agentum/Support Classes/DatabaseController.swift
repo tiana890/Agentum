@@ -92,8 +92,9 @@ class DatabaseController: NSObject {
                     var version = dict["version"] as! NSNumber
                     var fileName = dict["updateFileName"] as! NSString
                     var filePath = NSBundle.mainBundle().pathForResource(fileName as String, ofType: "sql")
-                    println("file path for update" + filePath!)
+                    
                     self.executeSqlFileWith(filePath!, andDatabase: self.database!)
+                    println("file path for update" + filePath!)
                     self.database?.setUserVersion(UInt32(version.intValue))
                 }
             }
@@ -104,9 +105,10 @@ class DatabaseController: NSObject {
                     var version = dict["version"] as! NSNumber
                     var fileName = dict["updateFileName"] as! NSString
                     var filePath = NSBundle.mainBundle().pathForResource(fileName as String, ofType: "sql");
-                    println("file path for update" + filePath!)
+                    
                     if (previousVersion < UInt32(version.intValue)) {
                         self.executeSqlFileWith(filePath!, andDatabase: self.database!)
+                        println("file path for update" + filePath!)
                         self.database?.setUserVersion(UInt32(version.intValue))
                     }
                 }
@@ -116,11 +118,7 @@ class DatabaseController: NSObject {
         println("Current DB Version = \(self.database?.userVersion())")
     }
 
-    private func versionNumberString() -> NSString{
-        var version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as! NSString
-        return version
-    }
-    
+        
     private func executeSqlFileWith(path:String, andDatabase db:FMDatabase)
     {
         let fileManager = NSFileManager.defaultManager()

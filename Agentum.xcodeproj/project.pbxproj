@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CD5C02D1B8D9EDA006E0390 /* NSDate+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C02C1B8D9EDA006E0390 /* NSDate+swift.swift */; };
+		4CD5C0351B8DD01F006E0390 /* JobAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0331B8DD01F006E0390 /* JobAdapterModel.swift */; };
+		4CD5C0361B8DD01F006E0390 /* JobPlanAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0341B8DD01F006E0390 /* JobPlanAdapterModel.swift */; };
+		4CD5C0381B8DD038006E0390 /* CountTechOpsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0371B8DD038006E0390 /* CountTechOpsResponse.swift */; };
 		4CE3C7581B8C3EC700D57841 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */; };
 		4CE3C75A1B8C489700D57841 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7591B8C489700D57841 /* String+md5.swift */; };
 		883CC5FF1B749C2800201CBB /* WorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC5FE1B749C2800201CBB /* WorksViewController.swift */; };
@@ -70,8 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CD5C02C1B8D9EDA006E0390 /* NSDate+swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+swift.swift"; sourceTree = "<group>"; };
+		4CD5C0331B8DD01F006E0390 /* JobAdapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobAdapterModel.swift; sourceTree = "<group>"; };
+		4CD5C0341B8DD01F006E0390 /* JobPlanAdapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPlanAdapterModel.swift; sourceTree = "<group>"; };
+		4CD5C0371B8DD038006E0390 /* CountTechOpsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountTechOpsResponse.swift; sourceTree = "<group>"; };
 		4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
-		4CE3C7591B8C489700D57841 /* String+md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
+		4CE3C7591B8C489700D57841 /* String+md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+md5.swift"; path = "../String+md5.swift"; sourceTree = "<group>"; };
 		6E38F212FD2F2B7D9EF9079D /* libPods-Agentum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agentum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		883CC5FE1B749C2800201CBB /* WorksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksViewController.swift; sourceTree = "<group>"; };
 		883CC60D1B74AF7700201CBB /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
@@ -157,6 +165,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CD5C02B1B8D9E26006E0390 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CE3C7591B8C489700D57841 /* String+md5.swift */,
+				4CD5C02C1B8D9EDA006E0390 /* NSDate+swift.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4CD5C0321B8DCFBF006E0390 /* Help Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4CD5C0331B8DD01F006E0390 /* JobAdapterModel.swift */,
+				4CD5C0341B8DD01F006E0390 /* JobPlanAdapterModel.swift */,
+				4CD5C0371B8DD038006E0390 /* CountTechOpsResponse.swift */,
+			);
+			path = "Help Entities";
+			sourceTree = "<group>";
+		};
 		51923DCDAD2C824E0C5A171A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +317,8 @@
 		88DE666D1B748794004D7F15 /* Agentum */ = {
 			isa = PBXGroup;
 			children = (
+				4CD5C0321B8DCFBF006E0390 /* Help Entities */,
+				4CD5C02B1B8D9E26006E0390 /* Extensions */,
 				88DC4B7A1B8B7B9A00422875 /* UpgradeDatabase.plist */,
 				88DCB03A1B8254BE0036F69B /* Entities */,
 				883CC6461B7AFE2100201CBB /* Support Classes */,
@@ -308,7 +337,6 @@
 				88DE66791B748794004D7F15 /* LaunchScreen.xib */,
 				88DE666E1B748794004D7F15 /* Supporting Files */,
 				883CC63B1B79ED3E00201CBB /* FMDB-Bridging-Header.h */,
-				4CE3C7591B8C489700D57841 /* String+md5.swift */,
 			);
 			path = Agentum;
 			sourceTree = "<group>";
@@ -502,6 +530,7 @@
 				88DC4B1F1B8B78AE00422875 /* Brigade.swift in Sources */,
 				88DC4B201B8B78AE00422875 /* BrigadeWorker.swift in Sources */,
 				88DC4B231B8B78AE00422875 /* JobTechOp.swift in Sources */,
+				4CD5C0381B8DD038006E0390 /* CountTechOpsResponse.swift in Sources */,
 				88DE66711B748794004D7F15 /* AppDelegate.swift in Sources */,
 				88DC4B241B8B78AE00422875 /* JobTechOpPlan.swift in Sources */,
 				883CC5FF1B749C2800201CBB /* WorksViewController.swift in Sources */,
@@ -522,7 +551,10 @@
 				883CC6121B7765A500201CBB /* WorkInfoViewController.swift in Sources */,
 				88DC4B291B8B790200422875 /* APP.swift in Sources */,
 				883CC6371B79E96F00201CBB /* FMDatabasePool.m in Sources */,
+				4CD5C02D1B8D9EDA006E0390 /* NSDate+swift.swift in Sources */,
 				883CC6381B79E96F00201CBB /* FMDatabaseQueue.m in Sources */,
+				4CD5C0361B8DD01F006E0390 /* JobPlanAdapterModel.swift in Sources */,
+				4CD5C0351B8DD01F006E0390 /* JobAdapterModel.swift in Sources */,
 				883CC6141B77CA6500201CBB /* OperationViewCell.swift in Sources */,
 				883CC6351B79E96F00201CBB /* FMDatabase.m in Sources */,
 			);

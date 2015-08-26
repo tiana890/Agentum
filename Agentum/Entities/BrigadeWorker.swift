@@ -26,7 +26,14 @@ class BrigadeWorker: DBObject {
             var brigadeWorker = resSet[i] as! BrigadeWorker
             array.append(brigadeWorker.id_Brigade!)
         }
-        
-        APP.i().brigadeIDs = array
+        var brigadeIDs = ""
+        for (var i = 0; i < array.count; i++){
+            if i != array.count-1 {
+               brigadeIDs = brigadeIDs + "\(array[i]),"
+            } else {
+               brigadeIDs = brigadeIDs + "\(array[i])"
+            }
+        }
+        APP.i().brigadeIDs = brigadeIDs
     }
 }

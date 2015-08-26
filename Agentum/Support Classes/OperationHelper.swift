@@ -9,8 +9,5 @@
 import UIKit
 
 class OperationHelper: NSObject {
-    func getJobPlansBy(workerID: String, brigadeIDs: String){
-        
-    }
     
 }

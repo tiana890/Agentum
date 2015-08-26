@@ -16,7 +16,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate, UIScro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        login.text = "frodo"
+        password.text = "123"
     }
     
     override func didReceiveMemoryWarning() {

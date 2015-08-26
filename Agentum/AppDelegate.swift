@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DBDelegate {
         var databaseController = DatabaseController()
         
         databaseController.initWithDatabase(path!)
-        
+        APP.i().databaseController = databaseController
         if !databaseController.database!.open() {
             println("Unable to open database")
         }

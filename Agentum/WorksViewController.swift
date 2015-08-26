@@ -36,9 +36,8 @@ class WorksViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
-        
-        
-        // Do any additional setup after loading the view.
+    
+        APP.i().jobReposit?.generateJobLists()
     }
 
     override func didReceiveMemoryWarning() {

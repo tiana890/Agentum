@@ -24,7 +24,8 @@ class Worker: DBObject {
     dynamic var JobType: NSString?
     dynamic var IsWorkingNow: NSNumber?
     
-    static func saveWorkerBy(user: User){
+    static func saveWorkerIDBy(user: User){
+        /*
         var workerID = user.id_Worker?.integerValue
         var query = Worker.query().whereWithFormat("id = %@", withParameters: [Int(workerID!)])
         
@@ -32,8 +33,10 @@ class Worker: DBObject {
         
         if resSet.count > 0 {
             var worker = resSet[0] as! Worker
-            APP.i().worker = worker
+            APP.i().workerID = worker.Id
         }
+*/
+        APP.i().workerID = user.id_Worker?.stringValue
     }
 
     

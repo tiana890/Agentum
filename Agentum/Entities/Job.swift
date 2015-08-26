@@ -10,6 +10,12 @@ import UIKit
 @objc(Job)
 
 class Job: DBObject {
+    static var STATE_PLANNING = "planning"
+    static var STATE_IN_PROGRESS = "inprogress"
+    static var STATE_PARTLY = "partly"
+    static var STATE_DONE = "done"
+    
+    dynamic var ID: NSNumber?
     dynamic var Sync: NSNumber?
     dynamic var Name: NSString?
     dynamic var State: NSString?

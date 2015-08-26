@@ -10,11 +10,14 @@ import UIKit
 
 
 class APP {
-    var worker: Worker?
+    var workerID: String?
     var user: User?
     var brigade: Brigade?
-    var brigadeIDs: Array<NSNumber>?
+    var brigadeIDs: String?
     var jobReposit: JobReposit?
+    var databaseController: DatabaseController?
+    
+    var jobPlanIDs: String?
     
     static func i() -> APP{
         struct Static {
@@ -23,6 +26,7 @@ class APP {
         }
         dispatch_once(&Static.onceToken) {
             Static.instance = APP()
+            Static.instance?.jobReposit = JobReposit()
         }
         return Static.instance!
     }

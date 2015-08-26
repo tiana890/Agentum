@@ -23,7 +23,7 @@ class User: DBObject {
         if resSet.count > 0 {
             var user = resSet[0] as! User
             APP.i().user = user
-            Worker.saveWorkerBy(user)
+            Worker.saveWorkerIDBy(user)
             BrigadeWorker.saveBrigadeIDsWithUser(user)
         }
         

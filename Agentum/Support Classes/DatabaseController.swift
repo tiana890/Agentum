@@ -63,7 +63,8 @@ class DatabaseController: NSObject {
             " GROUP BY jobPlan.id"
             
             //var timeString = NSDate(dateString:"2015-08-26 00:00:00")
-            var timeString = "0000-00-00 00:00:00"
+            var currentDate = NSDate()
+            var timeString = currentDate.toString()
             
             if let res = self.database?.executeQuery(sql1, withArgumentsInArray: [timeString, timeString]){
                 var jobPlanIDs = ""
@@ -72,11 +73,13 @@ class DatabaseController: NSObject {
                     //println("id job plan = \(idJobPlan); ")
                     jobPlanIDs = jobPlanIDs + "\(idJobPlan),"
                 }
+                
                 if(count(jobPlanIDs) > 0){
-                    jobPlanIDs = dropLast(jobPlanIDs)
-                    APP.i().jobPlanIDs = jobPlanIDs
-                    println("\(jobPlanIDs)")
+                    if(jobPlanIDs[jobPlanIDs.endIndex.predecessor()] == ","){
+                        jobPlanIDs = dropLast(jobPlanIDs)
+                    }
                 }
+
                 return res
             } else {
                 println("select failed: \(self.database?.lastErrorMessage())")
@@ -104,7 +107,8 @@ class DatabaseController: NSObject {
             }
             
             //var timeString = NSDate(dateString:"2015-08-26 00:00:00")
-            var timeString = "0000-00-00 00:00:00"
+            var currentDate = NSDate()
+            var timeString = currentDate.toString()
             
             if let res = self.database?.executeQuery(sql, withArgumentsInArray: [timeString, timeString]){
                 return res
@@ -119,13 +123,25 @@ class DatabaseController: NSObject {
         
         while result.next() {
             var j = Job()
-            j.ID = NSNumber(int:result.intForColumn("id"))
-            j.Name = result.stringForColumn("Name")
-            j.State = result.stringForColumn("State")
-            j.Description = result.stringForColumn("Description")
-            j.Deadline = result.stringForColumn("Deadline")
-            j.FinishedDay = result.stringForColumn("FinishedDay")
-            
+            if(NSNumber(int:result.intForColumn("id")) != NSNull()){
+                j.ID = NSNumber(int:result.intForColumn("id"))
+            }
+            if(result.stringForColumn("Name") != nil){
+                j.Name = result.stringForColumn("Name")
+            }
+            if(result.stringForColumn("State") != nil){
+                j.State = result.stringForColumn("State")
+            }
+            if(result.stringForColumn("Description") != nil){
+                j.Description = result.stringForColumn("Description")
+            }
+            if(result.stringForColumn("FinishedDay") != nil){
+                j.FinishedDay = result.stringForColumn("FinishedDay")
+            }
+            if(result.stringForColumn("Deadline") != nil){
+                j.Deadline = result.stringForColumn("Deadline")
+            }
+
             jobArray.append(j)
         }
         
@@ -151,7 +167,8 @@ class DatabaseController: NSObject {
             " GROUP BY jobPlan.id";
 
             //var timeString = NSDate(dateString:"2015-08-26 00:00:00")
-            var timeString = "0000-00-00 00:00:00"
+            var currentDate = NSDate()
+            var timeString = currentDate.toString()
             
             if let res = self.database?.executeQuery(sql, withArgumentsInArray: [timeString, timeString]){
 
@@ -213,7 +230,8 @@ class DatabaseController: NSObject {
             " GROUP BY jobTechOp.id_Job"
             
             //var timeString = NSDate(dateString:"2015-08-26 00:00:00")
-            var timeString = "0000-00-00 00:00:00"
+            var currentDate = NSDate()
+            var timeString = currentDate.toString()
             
             if let res = self.database?.executeQuery(sql, withArgumentsInArray: [timeString, timeString]){
                 
@@ -239,7 +257,7 @@ class DatabaseController: NSObject {
             } else {
                 ctor.hasProblems = false
             }
-            if(result.intForColumn("started") > 0){
+            if(result.intForColumn("startedCount") > 0){
                 ctor.started = true
             } else {
                 ctor.started = false

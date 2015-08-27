@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BtK-ou-gTj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BtK-ou-gTj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -160,7 +160,7 @@
         <!--Работы-->
         <scene sceneID="UiY-wn-KDG">
             <objects>
-                <viewController id="Tzp-Gh-j2g" customClass="WorksViewController" customModule="Agentum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tzp-Gh-j2g" customClass="JobsViewController" customModule="Agentum" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PPx-zu-anZ"/>
                         <viewControllerLayoutGuide type="bottom" id="naK-CA-MXQ"/>
@@ -177,7 +177,7 @@
                                     <segment title="Готовые"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentChangedValue:" destination="Tzp-Gh-j2g" eventType="valueChanged" id="qhN-1q-qu0"/>
+                                    <action selector="segmentChangedValue:" destination="Tzp-Gh-j2g" eventType="valueChanged" id="cJZ-LM-Cgl"/>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mx1-0m-Ky1">
@@ -355,8 +355,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Tzp-Gh-j2g" id="Agg-Xl-LLn"/>
-                                    <outlet property="delegate" destination="Tzp-Gh-j2g" id="uHy-Xg-z2p"/>
+                                    <outlet property="dataSource" destination="Tzp-Gh-j2g" id="hTa-6n-wJL"/>
+                                    <outlet property="delegate" destination="Tzp-Gh-j2g" id="aFg-rk-4X2"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -364,8 +364,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Работы" id="5jX-Qd-8Gv"/>
                     <connections>
-                        <outlet property="segmentControl" destination="s1x-1I-pf3" id="4wO-Tw-wd5"/>
-                        <outlet property="table" destination="mx1-0m-Ky1" id="6J5-zg-rQk"/>
+                        <outlet property="segmentControl" destination="s1x-1I-pf3" id="nem-aM-Ji1"/>
+                        <outlet property="table" destination="mx1-0m-Ky1" id="1mu-NS-FOR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGI-cp-xob" userLabel="First Responder" sceneMemberID="firstResponder"/>

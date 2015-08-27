@@ -11,9 +11,9 @@
 		4CD5C0351B8DD01F006E0390 /* JobAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0331B8DD01F006E0390 /* JobAdapterModel.swift */; };
 		4CD5C0361B8DD01F006E0390 /* JobPlanAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0341B8DD01F006E0390 /* JobPlanAdapterModel.swift */; };
 		4CD5C0381B8DD038006E0390 /* CountTechOpsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0371B8DD038006E0390 /* CountTechOpsResponse.swift */; };
+		4CD5C03A1B8EDB77006E0390 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0391B8EDB77006E0390 /* JobsViewController.swift */; };
 		4CE3C7581B8C3EC700D57841 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */; };
 		4CE3C75A1B8C489700D57841 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7591B8C489700D57841 /* String+md5.swift */; };
-		883CC5FF1B749C2800201CBB /* WorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC5FE1B749C2800201CBB /* WorksViewController.swift */; };
 		883CC60E1B74AF7700201CBB /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC60D1B74AF7700201CBB /* WorkCell.swift */; };
 		883CC6101B775B8100201CBB /* OperationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC60F1B775B8100201CBB /* OperationsViewController.swift */; };
 		883CC6121B7765A500201CBB /* WorkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC6111B7765A500201CBB /* WorkInfoViewController.swift */; };
@@ -78,10 +78,10 @@
 		4CD5C0331B8DD01F006E0390 /* JobAdapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobAdapterModel.swift; sourceTree = "<group>"; };
 		4CD5C0341B8DD01F006E0390 /* JobPlanAdapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPlanAdapterModel.swift; sourceTree = "<group>"; };
 		4CD5C0371B8DD038006E0390 /* CountTechOpsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountTechOpsResponse.swift; sourceTree = "<group>"; };
+		4CD5C0391B8EDB77006E0390 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		4CE3C7591B8C489700D57841 /* String+md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+md5.swift"; path = "../String+md5.swift"; sourceTree = "<group>"; };
 		6E38F212FD2F2B7D9EF9079D /* libPods-Agentum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agentum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		883CC5FE1B749C2800201CBB /* WorksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksViewController.swift; sourceTree = "<group>"; };
 		883CC60D1B74AF7700201CBB /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
 		883CC60F1B775B8100201CBB /* OperationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsViewController.swift; sourceTree = "<group>"; };
 		883CC6111B7765A500201CBB /* WorkInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkInfoViewController.swift; sourceTree = "<group>"; };
@@ -326,8 +326,8 @@
 				883CC6281B79E94E00201CBB /* src */,
 				883CC60C1B74AF6C00201CBB /* Cells */,
 				88DE66701B748794004D7F15 /* AppDelegate.swift */,
+				4CD5C0391B8EDB77006E0390 /* JobsViewController.swift */,
 				4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */,
-				883CC5FE1B749C2800201CBB /* WorksViewController.swift */,
 				88DE66721B748794004D7F15 /* ViewController.swift */,
 				883CC6111B7765A500201CBB /* WorkInfoViewController.swift */,
 				883CC60F1B775B8100201CBB /* OperationsViewController.swift */,
@@ -533,7 +533,6 @@
 				4CD5C0381B8DD038006E0390 /* CountTechOpsResponse.swift in Sources */,
 				88DE66711B748794004D7F15 /* AppDelegate.swift in Sources */,
 				88DC4B241B8B78AE00422875 /* JobTechOpPlan.swift in Sources */,
-				883CC5FF1B749C2800201CBB /* WorksViewController.swift in Sources */,
 				88DCB03D1B82FE260036F69B /* WorkerSkill.swift in Sources */,
 				88DC4B8E1B8CD15E00422875 /* OperationHelper.swift in Sources */,
 				88DC4B261B8B78AE00422875 /* TechOp.swift in Sources */,
@@ -556,6 +555,7 @@
 				4CD5C0361B8DD01F006E0390 /* JobPlanAdapterModel.swift in Sources */,
 				4CD5C0351B8DD01F006E0390 /* JobAdapterModel.swift in Sources */,
 				883CC6141B77CA6500201CBB /* OperationViewCell.swift in Sources */,
+				4CD5C03A1B8EDB77006E0390 /* JobsViewController.swift in Sources */,
 				883CC6351B79E96F00201CBB /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,25 +24,33 @@ class JobAdapterModel: NSObject {
     var hasProblems: Bool?
     var hasStartedTechOp: Bool?
     
+    init(jobID: NSNumber, jobPlanID : NSNumber) {
+        self.ID = jobID
+        self.idJobPlan = jobPlanID
+    }
+    
     func setStateTypeValue() -> JobAdapterModel{
         if(hasProblems == true){
             self.stateTypeValue = "исправление замечаний"
             
-        } else if (!hasStartedTechOp && isOperationDone.intValue == 0){
+        } else if (hasStartedTechOp == false && isOperationDone!.intValue == 0){
             self.stateTypeValue = "ожидание"
             
-        } else if (hastStartedTechOp && isOperationDone.intValue == 0){
+        } else if (hasStartedTechOp == true && isOperationDone!.intValue == 0){
             self.stateTypeValue = "в работе"
             
-        } else if (operationIsDone.intValue == totalCount.intValue && state == ){
-            self.stateTypeValue = "ожидание"
+        } else if (isOperationDone!.intValue != operationTotalCount!.intValue && state == Job.STATE_PARTLY){
+            self.stateTypeValue = "частично готово"
             
-        } else if (!hastStartedTechOp && operationIsDone.intValue == 0){
-            self.stateTypeValue = "ожидание"
+        } else if (isOperationDone!.intValue == operationTotalCount!.intValue && isOperationDone!.intValue > 0 && state == Job.STATE_PARTLY){
+            self.stateTypeValue = "на проверке"
             
-        } else if (!hastStartedTechOp && operationIsDone.intValue == 0){
-            self.stateTypeValue = "ожидание"
+        } else if (isOperationDone!.intValue == operationTotalCount!.intValue && isOperationDone!.intValue > 0 && state == Job.STATE_DONE){
+            self.stateTypeValue = "готово"
+        } else {
+            self.stateTypeValue = "--"
         }
+        
         
         return self
     }

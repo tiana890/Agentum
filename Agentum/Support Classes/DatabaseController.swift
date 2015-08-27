@@ -266,6 +266,37 @@ class DatabaseController: NSObject {
         }
         return countTechOpsResponseArray
     }
+    
+    func getFilesForJob(jobIDs: String) -> Array<CountFileResponse>{
+        var result = self.runFetchForClass(Job.classForCoder(), fetchBlock: { (database) -> FMResultSet in
+            var sql = "SELECT count(id) as count, id_Job as idJob " +
+                "FROM DocFileJob " +
+                "WHERE id_Job in (" + jobIDs + ") " +
+            "GROUP BY id_Job";
+            
+            if let res = self.database?.executeQuery(sql, withArgumentsInArray: nil){
+                
+                return res
+            } else {
+                println("select failed: \(self.database?.lastErrorMessage())")
+                //return self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil)
+            }
+            return FMResultSet()
+            
+            }, fetchResultsBlock: ())
+        
+        var countFileResponseArray: Array<CountFileResponse> = []
+        
+        while result.next() {
+            var cfr = CountFileResponse()
+            
+            cfr.jobID = NSNumber(int: result.intForColumn("idJob"))
+            cfr.countFile = NSNumber(int: result.intForColumn("count"))
+            
+            countFileResponseArray.append(cfr)
+        }
+        return countFileResponseArray
+    }
 
     func upgradeDatabaseIfRequired(){
         var previousVersion:UInt32?

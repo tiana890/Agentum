@@ -11,5 +11,4 @@ import UIKit
 class JobPlanAdapterModel: NSObject {
     var jobPlanID: NSNumber?
     var jobID: NSNumber?
-    
 }

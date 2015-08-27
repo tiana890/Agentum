@@ -16,10 +16,10 @@ class JobReposit: NSObject {
     var jobDict: Dictionary<NSNumber, JobAdapterModel> = [:]
     
     func generateJobLists(){
-        var jobPlanAdapterModelArray: Array<JobPlanAdapterModel> = []
-        jobPlanAdapterModelArray = APP.i().databaseController!.getJobPlanAdapterModelBy(APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
+        var jobPlanAdapterModelArray = APP.i().databaseController!.getJobPlanAdapterModelBy(APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
         
         var jobPlanIDs = String()
+        
         for (var i = 0; i < jobPlanAdapterModelArray.count; i++){
             var jpam = jobPlanAdapterModelArray[i]
             jobPlanIDs = jobPlanIDs + "\(jpam.jobPlanID!.intValue),"
@@ -34,12 +34,14 @@ class JobReposit: NSObject {
         
         APP.i().jobPlanIDs = jobPlanIDs
         
-        var jobArray: Array<Job> = []
+        var jobArray = APP.i().databaseController!.getJobsBy(APP.i().jobPlanIDs!, limit: 0, workerID: APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
         
-        jobArray = APP.i().databaseController!.getJobsBy(APP.i().jobPlanIDs!, limit: 0, workerID: APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
+        var jobIDs = String()
         
         for(var i = 0; i < jobArray.count; i++){
            var job = jobArray[i]
+           
+           jobIDs = jobIDs + "\(job.ID!.intValue),"
             if var jam = jobDict[job.ID!]{
                jam.ID = job.ID
                jam.name = job.Name
@@ -50,21 +52,33 @@ class JobReposit: NSObject {
                 
                jobDict[jam.ID!] = jam
             }
-           
         }
         
-        var countTechOpsResponseArray: Array<CountTechOpsResponse> = []
+        if(count(jobIDs) > 0){
+            if(jobIDs[jobIDs.endIndex.predecessor()] == ","){
+                jobIDs = dropLast(jobIDs)
+            }
+        }
         
-        countTechOpsResponseArray = APP.i().databaseController!.getTechOpsForJob(APP.i().jobPlanIDs!,workerID: APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
+        var countFileResponseArray = APP.i().databaseController!.getFilesForJob(jobIDs)
+        
+        for(var i = 0; i < countFileResponseArray.count; i++){
+            var cfr = countFileResponseArray[i]
+            if var jobAdapterModel = jobDict[cfr.jobID!]{
+                jobAdapterModel.countFile = cfr.countFile
+            }
+        }
+        
+        var countTechOpsResponseArray = APP.i().databaseController!.getTechOpsForJob(APP.i().jobPlanIDs!,workerID: APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
         
         for(var i = 0; i < countTechOpsResponseArray.count; i++){
             var ctor = countTechOpsResponseArray[i]
-            var jobAdapterModel = jobDict[ctor.jobID!]
-            
-            jobAdapterModel?.operationTotalCount = ctor.totalCount
-            jobAdapterModel?.isOperationDone = ctor.isDone
-            jobAdapterModel?.hasProblems = ctor.hasProblems
-            jobAdapterModel?.hasStartedTechOp = ctor.started
+            if var jobAdapterModel = jobDict[ctor.jobID!]{
+                jobAdapterModel.operationTotalCount = ctor.totalCount
+                jobAdapterModel.isOperationDone = ctor.isDone
+                jobAdapterModel.hasProblems = ctor.hasProblems
+                jobAdapterModel.hasStartedTechOp = ctor.started
+            }
         }
       
         for (var i = 0; i < jobArray.count; i++){

@@ -113,10 +113,17 @@ class JobsViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return cell!
         }
 */
+        var cellIdentifier = textCellIdentifier
         var jam = currentJobs[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as? WorkCell
+        if(jam.countFile?.intValue > 0){
+            cellIdentifier = textCellIdentifier2
+        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? WorkCell
         cell!.name.text = jam.name! as String
         cell!.numberOfOperations.text = "Выполнено \(jam.isOperationDone!.intValue) из \(jam.operationTotalCount!.intValue)"
+        if(jam.countFile?.intValue > 0){
+            cell!.numberOfFiles.text = "Файлы(\(jam.countFile!.intValue))"
+        }
         cell!.layoutIfNeeded()
         return cell!
     }

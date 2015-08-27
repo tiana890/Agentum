@@ -18,7 +18,7 @@ class JobAdapterModel: NSObject {
     var deadline: NSString?
     var finishDay: NSString?
     var projectName: NSString?
-    var countFile: NSString?
+    var countFile: NSNumber?
     var isOperationDone: NSNumber?
     var operationTotalCount: NSNumber?
     var hasProblems: Bool?

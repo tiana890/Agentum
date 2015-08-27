@@ -13,12 +13,18 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
     @IBOutlet var table: UITableView!
     
     let textCellIdentifier = "operationCell"
+    var jobPlanID: Int = 0
+    
+    var operations: Array<JobTechOp> = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.configureTableView()
 
+        operations = APP.i().databaseController!.getJobTechOps("\(jobPlanID)", isDone: false, findProblemOperation: false)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,12 +45,14 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10;
+        return operations.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as? OperationViewCell
-        cell!.name.text = "\(indexPath.row+1). Опора"
+        
+        var jobTechOp = operations[indexPath.row]
+        cell!.name.text = jobTechOp.
         
         return cell!
     }

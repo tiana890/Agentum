@@ -70,7 +70,7 @@ class JobReposit: NSObject {
             }
         }
         
-        var countTechOpsResponseArray = APP.i().databaseController!.getTechOpsForJob(APP.i().jobPlanIDs!,workerID: APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
+        var countTechOpsResponseArray = APP.i().databaseController!.getCountTechOpsForJob(APP.i().jobPlanIDs!,workerID: APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
         
         for(var i = 0; i < countTechOpsResponseArray.count; i++){
             var ctor = countTechOpsResponseArray[i]

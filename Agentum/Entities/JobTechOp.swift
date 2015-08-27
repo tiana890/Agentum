@@ -10,6 +10,7 @@ import UIKit
 @objc(JobTechOp)
 
 class JobTechOp: DBObject {
+    dynamic var ID: NSNumber?
     dynamic var Sync: NSNumber?
     dynamic var Amount: NSNumber?
     dynamic var StartedDay: NSString?

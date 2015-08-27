@@ -283,7 +283,7 @@
                                             <outlet property="name" destination="OuZ-A1-JEE" id="n8H-vK-LbH"/>
                                             <outlet property="numberOfOperations" destination="WlA-jW-JZJ" id="TAi-EG-faP"/>
                                             <outlet property="objectName" destination="pL1-0c-R3X" id="pV1-GH-sHL"/>
-                                            <segue destination="qzn-yL-ICa" kind="show" id="R2j-vJ-ORJ"/>
+                                            <segue destination="qzn-yL-ICa" kind="show" identifier="operationSegue" id="R2j-vJ-ORJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workCell2" rowHeight="128" id="6Ck-zJ-wpb" customClass="WorkCell" customModule="Agentum">
@@ -393,7 +393,7 @@
                                             <outlet property="numberOfFiles" destination="TYz-YL-Ia3" id="ZPN-fW-FX3"/>
                                             <outlet property="numberOfOperations" destination="bTe-Xx-pxU" id="Pr9-cN-oQx"/>
                                             <outlet property="objectName" destination="1YJ-2m-Gdu" id="j0S-N6-ffb"/>
-                                            <segue destination="qzn-yL-ICa" kind="show" id="sdP-9F-jXo"/>
+                                            <segue destination="qzn-yL-ICa" kind="show" identifier="operationSegue" id="sdP-9F-jXo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -697,7 +697,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DSs-J9-GtS"/>
-        <segue reference="sdP-9F-jXo"/>
+        <segue reference="tXG-6J-n3e"/>
+        <segue reference="R2j-vJ-ORJ"/>
     </inferredMetricsTieBreakers>
 </document>

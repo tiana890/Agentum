@@ -77,19 +77,6 @@ class JobsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK:  UITableViewDelegate Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /*
-        switch (currentWorkState) {
-        case .actualWorkState:
-        return actualWorks.count
-        case .testWorkState:
-        return testWorks.count
-        case .readyWorkState:
-        return actualWorks.count
-        
-        default:
-        return 0
-        }
-        */
         return currentJobs.count;
     }
     
@@ -116,7 +103,6 @@ class JobsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    
     // MARK:  UISegmentedControl Methods
     
     @IBAction func segmentChangedValue(sender: UISegmentedControl) {
@@ -141,7 +127,10 @@ class JobsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "operationSegue"{
             var oc = segue.destinationViewController as! OperationsViewController
-            
+            var indexPath = table.indexPathForSelectedRow()
+            var job = currentJobs[indexPath!.row]
+            var jobPlanID = job.idJobPlan
+            oc.jobPlanID = Int(jobPlanID!.intValue)
         }
     }
     

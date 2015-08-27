@@ -20,6 +20,8 @@ class DatabaseController: NSObject {
     
     var database: FMDatabase?
     
+    //MARK: Low level database methods
+    
     func initWithDatabase(path: String){
         database = FMDatabase(path: path)
     }
@@ -45,7 +47,7 @@ class DatabaseController: NSObject {
         return result
     }
     
-    
+    //MARK: methods for Entities
     func getJobPlansBy(workerID: String, brigadeIDs: String){
         self.runFetchForClass(JobPlan.classForCoder(), fetchBlock: { (database) -> FMResultSet in
             var sql1 = "SELECT jobPlan.* " +
@@ -198,7 +200,7 @@ class DatabaseController: NSObject {
         return jobPlanAdapterModelArray
     }
 
-    func getTechOpsForJob(jobPlanIDs: String, workerID: String, brigadeIDs: String) -> Array<CountTechOpsResponse>{
+    func getCountTechOpsForJob(jobPlanIDs: String, workerID: String, brigadeIDs: String) -> Array<CountTechOpsResponse>{
         var result = self.runFetchForClass(Job.classForCoder(), fetchBlock: { (database) -> FMResultSet in
             
             var sql = "SELECT jobTechOp.id_Job AS idJob, COUNT(jobTechOp.id) totalCount, SUM(jobTechOp.IsDone) doneCount, SUM(jobTechOp.HasProblems) as hasProblems, SUM(jobTechOp.StartedDay) as startedCount" +
@@ -302,7 +304,134 @@ class DatabaseController: NSObject {
         }
         return countFileResponseArray
     }
+    
+    func getJobTechOps(jobPlanID: String, isDone: Bool, findProblemOperation: Bool) -> Array<JobTechOp>{
+        var result = self.runFetchForClass(Job.classForCoder(), fetchBlock: { (database) -> FMResultSet in
+            
+            var isDoneQuery = " jobTechOp.isDone AND "
+            var findProbleQuery = " jobTechOp.HasProblems AND "
+            
+            var currentDate = NSDate()
+            var timeString = currentDate.toString()
+            
+            var sql: String?
+            if(self.jobForMe(jobPlanID, workerID: APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!) == true){
+                sql = "SELECT jobTechOp.* " +
+                    "FROM JobTechOp AS jobTechOp " +
+                    "INNER JOIN JobTechOpPlan AS jobTechOpPlan ON jobTechOpPlan.id_JobPlan = " + jobPlanID + " AND jobTechOp.id = jobTechOpPlan.id_JobTechOp AND jobTechOpPlan.IsVisible AND jobTechOpPlan.StartingMoment <= ? " +
+                    "LEFT JOIN JobTechOpPlanWorker AS worker ON jobTechOpPlan.id = worker.id_JobTechOpPlan AND worker.id_Worker = " + APP.i().workerID! + " " +
+                    "LEFT JOIN JobTechOpPlanBrigade AS brigade ON jobTechOpPlan.id = brigade.id_JobTechOpPlan AND brigade.id_Brigade IN (" + APP.i().brigadeIDs! + ") " +
+                    "LEFT JOIN JobTechOpPlanWorker AS otherWorker ON jobTechOpPlan.id = otherWorker.id_JobTechOpPlan " +
+                    "LEFT JOIN JobTechOpPlanBrigade AS otherBrigade ON jobTechOpPlan.id = otherBrigade.id_JobTechOpPlan " +
+                    "WHERE " + (isDone ? isDoneQuery : "") + (findProblemOperation ? findProbleQuery : "") + " (worker.id IS NOT NULL OR brigade.id IS NOT NULL OR (otherWorker.id IS NULL AND otherBrigade.id IS NULL)) " +
+                    "GROUP BY jobTechOp.id " +
+                "ORDER BY jobTechOpPlan.Ord";
+            } else {
+                sql = "SELECT jobTechOp.* " +
+                    "FROM JobTechOp AS jobTechOp " +
+                    "INNER JOIN JobTechOpPlan AS jobTechOpPlan ON jobTechOpPlan.id_JobPlan = " + jobPlanID + " AND jobTechOp.id = jobTechOpPlan.id_JobTechOp AND jobTechOpPlan.IsVisible AND jobTechOpPlan.StartingMoment <= ? " +
+                    "LEFT JOIN JobTechOpPlanWorker AS worker ON jobTechOpPlan.id = worker.id_JobTechOpPlan AND worker.id_Worker = " + APP.i().workerID! + " " +
+                    "LEFT JOIN JobTechOpPlanBrigade AS brigade ON jobTechOpPlan.id = brigade.id_JobTechOpPlan AND brigade.id_Brigade IN (" + APP.i().brigadeIDs! + ") " +
+                    "WHERE " + (isDone ? isDoneQuery : "") + (findProblemOperation ? findProbleQuery : "") + " (worker.id IS NOT NULL OR brigade.id IS NOT NULL) " +
+                    "GROUP BY jobTechOp.id " +
+                "ORDER BY jobTechOpPlan.Ord";
+            }
+            
+            if let res = self.database?.executeQuery(sql, withArgumentsInArray: [timeString]){
+                
+                return res
+            } else {
+                println("select failed: \(self.database?.lastErrorMessage())")
+                //return self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil)
+            }
+            return FMResultSet()
+            
+            }, fetchResultsBlock: ())
+        
+        var jobTechOpArray: Array<JobTechOp> = []
+        
+        while result.next() {
+            var jtop = JobTechOp()
+            
+            if(NSNumber(int:result.intForColumn("id")) != NSNull()){
+                jtop.ID = NSNumber(int:result.intForColumn("id"))
+            }
+            if(NSNumber(int:result.intForColumn("Sync")) != NSNull()){
+                jtop.ID = NSNumber(int:result.intForColumn("Sync"))
+            }
+            if(NSNumber(int:result.intForColumn("Amount")) != NSNull()){
+                jtop.ID = NSNumber(int:result.intForColumn("Amount"))
+            }
+            if(result.stringForColumn("StartedDay") != nil){
+                jtop.StartedDay = result.stringForColumn("StartedDay")
+            }
+            if(result.stringForColumn("FinishedDay") != nil){
+                jtop.FinishedDay = result.stringForColumn("FinishedDay")
+            }
+            if(NSNumber(int:result.intForColumn("IsDone")) != NSNull()){
+                jtop.IsDone = NSNumber(int:result.intForColumn("IsDone"))
+            }
+            if(NSNumber(int:result.intForColumn("id_Job")) != NSNull()){
+                jtop.id_Job = NSNumber(int:result.intForColumn("id_Job"))
+            }
+            if(NSNumber(int:result.intForColumn("id_TechOp")) != NSNull()){
+                jtop.id_TechOp = NSNumber(int:result.intForColumn("id_TechOp"))
+            }
+            if(NSNumber(int:result.intForColumn("Ord")) != NSNull()){
+                jtop.Ord = NSNumber(int:result.intForColumn("Ord"))
+            }
+            if(NSNumber(int:result.intForColumn("DoneAmount")) != NSNull()){
+                jtop.DoneAmount = NSNumber(int:result.intForColumn("DoneAmount"))
+            }
+            if(result.stringForColumn("Deadline") != nil){
+                jtop.Deadline = result.stringForColumn("Deadline")
+            }
+            if(result.stringForColumn("ValidateDescription") != nil){
+                jtop.ValidateDescription = result.stringForColumn("ValidateDescription")
+            }
+            if(NSNumber(int:result.intForColumn("HasProblems")) != NSNull()){
+                jtop.HasProblems = NSNumber(int:result.intForColumn("HasProblems"))
+            }
+            
+            jobTechOpArray.append(jtop)
+        }
+        return jobTechOpArray
 
+        
+    }
+    
+    func jobForMe(jobPlanID: String, workerID: String, brigadeIDs: String) -> Bool{
+       
+        var result = self.runFetchForClass(Job.classForCoder(), fetchBlock: { (database) -> FMResultSet in
+           
+            var sql = "SELECT jobPlan.* " +
+                "FROM JobPlan as jobPlan " +
+                "LEFT JOIN JobPlanWorker AS jobWorker ON jobPlan.id = jobWorker.id_JobPlan AND jobWorker.id_Worker = " + workerID + " " +
+                "LEFT JOIN JobPlanBrigade AS jobBrigade ON jobPlan.id = jobBrigade.id_JobPlan AND jobBrigade.id_Brigade IN (" + brigadeIDs + ") " +
+                "WHERE jobPlan.IsVisible AND jobPlan.StartingMoment <= ? AND jobPlan.id = " + jobPlanID + " AND (jobWorker.id IS NOT NULL OR jobBrigade.id IS NOT NULL) " +
+            "LIMIT 1";
+            
+            var currentDate = NSDate()
+            var timeString = currentDate.toString()
+            
+            if let res = self.database?.executeQuery(sql, withArgumentsInArray: [timeString]){
+                
+                return res
+            } else {
+                println("select failed: \(self.database?.lastErrorMessage())")
+                //return self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil)
+            }
+            return FMResultSet()
+            
+            }, fetchResultsBlock: ())
+        
+        while(result.next()){
+            return true
+        }
+        return false
+        
+    }
+    //MARK: Upgrade database
     func upgradeDatabaseIfRequired(){
         var previousVersion:UInt32?
         previousVersion = self.database?.userVersion()
@@ -345,6 +474,7 @@ class DatabaseController: NSObject {
         println("Current DB Version = \(self.database?.userVersion())")
     }
 
+    
         
     private func executeSqlFileWith(path:String, andDatabase db:FMDatabase)
     {

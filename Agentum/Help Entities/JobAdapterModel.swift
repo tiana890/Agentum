@@ -54,32 +54,4 @@ class JobAdapterModel: NSObject {
         
         return self
     }
-    /*
-    public JobAdapterModel setStateTypeValue() {
-    if (hasProblem) {
-    this.stateTypeValue = "исправление замечаний";
-    
-    } else if (!hasStartedTechOp && operationIsDone == 0) {
-    this.stateTypeValue = "ожидание";
-    
-    } else if (hasStartedTechOp && operationIsDone == 0) {
-    this.stateTypeValue = "в работе";
-    
-    } else if (operationIsDone != operationTotalCount && state.equals(Job.STATE_PARTLY)) {
-    this.stateTypeValue = "частично готово";
-    
-    } else if (operationIsDone == operationTotalCount && operationIsDone > 0 && state.equals(Job.STATE_PARTLY)) {
-    this.stateTypeValue = "на проверке";
-    
-    } else if (operationIsDone == operationTotalCount && operationIsDone > 0 && state.equals(Job.STATE_DONE)) {
-    this.stateTypeValue = "готово";
-    
-    } else {
-    this.stateTypeValue = "--";
-    }
-    
-    return this;
-    }
-
-    */
 }

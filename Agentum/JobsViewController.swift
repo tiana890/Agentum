@@ -94,38 +94,25 @@ class JobsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        /*
-        if indexPath.row % 2 == 0
-        {
-            let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier2, forIndexPath: indexPath) as? WorkCell
-            cell!.name.text = "Залить фундамент, покрасить стены"
-            cell!.numberOfOperations.text = "Выполнено 2 из 2 операций"
-            cell!.numberOfFiles.text = "Файлы(2)"
-            cell!.layoutIfNeeded()
-            return cell!
-        }
-        else
-        {
-            let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as? WorkCell
-            cell!.name.text = "Залить фундамент, покрасить стены"
-            cell!.numberOfOperations.text = "Выполнено 2 из 2 операций"
-            cell!.layoutIfNeeded()
-            return cell!
-        }
-*/
+        
         var cellIdentifier = textCellIdentifier
         var jam = currentJobs[indexPath.row]
         if(jam.countFile?.intValue > 0){
             cellIdentifier = textCellIdentifier2
         }
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? WorkCell
-        cell!.name.text = jam.name! as String
-        cell!.numberOfOperations.text = "Выполнено \(jam.isOperationDone!.intValue) из \(jam.operationTotalCount!.intValue)"
-        if(jam.countFile?.intValue > 0){
-            cell!.numberOfFiles.text = "Файлы(\(jam.countFile!.intValue))"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkCell
+        
+            cell.name.text = jam.name! as String
+            cell.numberOfOperations.text = "Выполнено \(jam.isOperationDone!.intValue) из \(jam.operationTotalCount!.intValue)"
+            if(jam.countFile?.intValue > 0){
+                cell.numberOfFiles.text = "Файлы(\(jam.countFile!.intValue))"
+            }
+           if let pname = jam.projectName{
+               var str = pname as String
+               cell.objectName.text = "Объект: " + str
         }
-        cell!.layoutIfNeeded()
-        return cell!
+            cell.layoutIfNeeded()
+            return cell
     }
     
     

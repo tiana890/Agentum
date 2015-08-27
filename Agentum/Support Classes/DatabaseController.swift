@@ -93,11 +93,12 @@ class DatabaseController: NSObject {
 
     func getJobsBy(jobPlanIDs: String, limit: Int, workerID: String, brigadeIDs: String) -> Array<Job>{
         var result = self.runFetchForClass(Job.classForCoder(), fetchBlock: { (database) -> FMResultSet in
-            var sql = "SELECT job.* " +
+            var sql = "SELECT job.*, object.Name as objectName " +
                 "FROM Job AS job " +
                 "INNER JOIN JobPlan AS jobPlan ON job.id = jobPlan.id_Job AND jobPlan.IsVisible AND jobPlan.StartingMoment <= ? " +
                 "LEFT JOIN JobPlanWorker AS worker ON jobPlan.id = worker.id_JobPlan " +
                 "LEFT JOIN JobPlanBrigade AS brigade ON jobPlan.id = brigade.id_JobPlan " +
+                "LEFT JOIN Object AS object ON job.id_Object = object.id " +
                 "WHERE worker.id_Worker = " + "\(workerID)" + " OR brigade.id_Brigade IN (" + "\(brigadeIDs)" + ") OR jobPlan.id IN (" + "\(jobPlanIDs)" + ") " +
                 "GROUP BY job.id " +
             "ORDER BY jobPlan.Ord, job.Deadline "
@@ -140,6 +141,10 @@ class DatabaseController: NSObject {
             }
             if(result.stringForColumn("Deadline") != nil){
                 j.Deadline = result.stringForColumn("Deadline")
+            }
+            if(result.stringForColumn("objectName") != nil){
+                j.ProjectName = result.stringForColumn("objectName")
+               // println("Object name = " + String(j.ProjectName!))
             }
 
             jobArray.append(j)

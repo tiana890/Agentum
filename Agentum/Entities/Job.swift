@@ -29,5 +29,6 @@ class Job: DBObject {
     dynamic var PlanFinishedDay: NSString?
     dynamic var id_Object: NSNumber?
     dynamic var id_Brigade: NSNumber?
+    dynamic var ProjectName: NSString?
    
 }

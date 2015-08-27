@@ -14,6 +14,7 @@ class WorkCell: UITableViewCell {
     @IBOutlet var numberOfOperations: UILabel!
     @IBOutlet var numberOfFiles: UILabel!
     
+    @IBOutlet weak var objectName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

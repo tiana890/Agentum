@@ -13,7 +13,7 @@ class JobReposit: NSObject {
     var completeJobs: Array<JobAdapterModel> = []
     var finishJobs: Array<JobAdapterModel> = []
     
-    var jobDict: Dictionary<NSNumber, JobAdapterModel> = [:]
+    var jobDict = Dictionary<NSNumber, JobAdapterModel>()
     
     func generateJobLists(){
         var jobPlanAdapterModelArray = APP.i().databaseController!.getJobPlanAdapterModelBy(APP.i().workerID!, brigadeIDs: APP.i().brigadeIDs!)
@@ -49,6 +49,7 @@ class JobReposit: NSObject {
                jam.descr = job.Description
                jam.finishDay = job.FinishedDay
                jam.deadline = job.Deadline
+               jam.projectName = job.ProjectName
                 
                jobDict[jam.ID!] = jam
             }
@@ -83,7 +84,7 @@ class JobReposit: NSObject {
       
         for (var i = 0; i < jobArray.count; i++){
             var job = jobArray[i]
-            
+            println("job ID \(job.ID!)" )
             var jam = jobDict[job.ID!]
             jam?.setStateTypeValue()
             

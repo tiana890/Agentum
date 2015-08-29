@@ -11,6 +11,8 @@ import UIKit
 class OperationViewCell: UITableViewCell {
 
     @IBOutlet var name: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var status: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

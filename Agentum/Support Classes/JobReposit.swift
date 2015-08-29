@@ -101,7 +101,7 @@ class JobReposit: NSObject {
                 } else {
                     finishJobs.append(jam!)
                 }
-            } else if((jam?.operationTotalCount!.intValue == jam?.isOperationDone!.intValue) && jam?.operationTotalCount?.intValue > 0){
+            } else if((jam?.operationTotalCount?.intValue == jam?.isOperationDone?.intValue) && jam?.operationTotalCount?.intValue > 0){
                 completeJobs.append(jam!)
             } else {
                 actualJobs.append(jam!)

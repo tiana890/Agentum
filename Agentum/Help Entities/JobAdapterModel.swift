@@ -39,13 +39,13 @@ class JobAdapterModel: NSObject {
         } else if (hasStartedTechOp == true && isOperationDone!.intValue == 0){
             self.stateTypeValue = "в работе"
             
-        } else if (isOperationDone!.intValue != operationTotalCount!.intValue && state == Job.STATE_PARTLY){
+        } else if (isOperationDone?.intValue != operationTotalCount?.intValue && state == Job.STATE_PARTLY){
             self.stateTypeValue = "частично готово"
             
-        } else if (isOperationDone!.intValue == operationTotalCount!.intValue && isOperationDone!.intValue > 0 && state == Job.STATE_PARTLY){
+        } else if (isOperationDone?.intValue == operationTotalCount?.intValue && isOperationDone?.intValue > 0 && state == Job.STATE_PARTLY){
             self.stateTypeValue = "на проверке"
             
-        } else if (isOperationDone!.intValue == operationTotalCount!.intValue && isOperationDone!.intValue > 0 && state == Job.STATE_DONE){
+        } else if (isOperationDone?.intValue == operationTotalCount?.intValue && isOperationDone?.intValue > 0 && state == Job.STATE_DONE){
             self.stateTypeValue = "готово"
         } else {
             self.stateTypeValue = "--"

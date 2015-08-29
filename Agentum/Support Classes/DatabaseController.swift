@@ -126,28 +126,20 @@ class DatabaseController: NSObject {
         
         while result.next() {
             var j = Job()
-            if(NSNumber(int:result.intForColumn("id")) != NSNull()){
-                j.ID = NSNumber(int:result.intForColumn("id"))
-            }
-            if(result.stringForColumn("Name") != nil){
-                j.Name = result.stringForColumn("Name")
-            }
-            if(result.stringForColumn("State") != nil){
-                j.State = result.stringForColumn("State")
-            }
-            if(result.stringForColumn("Description") != nil){
-                j.Description = result.stringForColumn("Description")
-            }
-            if(result.stringForColumn("FinishedDay") != nil){
-                j.FinishedDay = result.stringForColumn("FinishedDay")
-            }
-            if(result.stringForColumn("Deadline") != nil){
-                j.Deadline = result.stringForColumn("Deadline")
-            }
-            if(result.stringForColumn("objectName") != nil){
-                j.ProjectName = result.stringForColumn("objectName")
-               // println("Object name = " + String(j.ProjectName!))
-            }
+           
+            j.ID = NSNumber(int:result.intForColumn("id"))
+        
+            j.Name = result.stringForColumn("Name")
+        
+            j.State = result.stringForColumn("State")
+    
+            j.Description = result.stringForColumn("Description")
+        
+            j.FinishedDay = result.stringForColumn("FinishedDay")
+        
+            j.Deadline = result.stringForColumn("Deadline")
+       
+            j.ProjectName = result.stringForColumn("objectName")
 
             jobArray.append(j)
         }
@@ -353,50 +345,90 @@ class DatabaseController: NSObject {
         while result.next() {
             var jtop = JobTechOp()
             
-            if(NSNumber(int:result.intForColumn("id")) != NSNull()){
+            //if(result.intForColumn("id")) != nil){
                 jtop.ID = NSNumber(int:result.intForColumn("id"))
-            }
-            if(NSNumber(int:result.intForColumn("Sync")) != NSNull()){
-                jtop.ID = NSNumber(int:result.intForColumn("Sync"))
-            }
-            if(NSNumber(int:result.intForColumn("Amount")) != NSNull()){
-                jtop.ID = NSNumber(int:result.intForColumn("Amount"))
-            }
-            if(result.stringForColumn("StartedDay") != nil){
+            //}
+            //if(result.intForColumn("Sync") != nil){
+                jtop.Sync = NSNumber(int:result.intForColumn("Sync"))
+           // }
+           // if(NSNumber(int:result.intForColumn("Amount")) != nil){
+                jtop.Amount = NSNumber(int:result.intForColumn("Amount"))
+            //}
+            //if(result.stringForColumn("StartedDay") != nil){
                 jtop.StartedDay = result.stringForColumn("StartedDay")
-            }
-            if(result.stringForColumn("FinishedDay") != nil){
+            //}
+            //if(result.stringForColumn("FinishedDay") != nil){
                 jtop.FinishedDay = result.stringForColumn("FinishedDay")
-            }
-            if(NSNumber(int:result.intForColumn("IsDone")) != NSNull()){
+            //}
+            //if(NSNumber(int:result.intForColumn("IsDone")) != nil){
                 jtop.IsDone = NSNumber(int:result.intForColumn("IsDone"))
-            }
-            if(NSNumber(int:result.intForColumn("id_Job")) != NSNull()){
+           // }
+            //if(NSNumber(int:result.intForColumn("id_Job")) != nil){
                 jtop.id_Job = NSNumber(int:result.intForColumn("id_Job"))
-            }
-            if(NSNumber(int:result.intForColumn("id_TechOp")) != NSNull()){
+            //}
+           // if(NSNumber(int:result.intForColumn("id_TechOp")) != nil){
                 jtop.id_TechOp = NSNumber(int:result.intForColumn("id_TechOp"))
-            }
-            if(NSNumber(int:result.intForColumn("Ord")) != NSNull()){
+            //}
+            //if(NSNumber(int:result.intForColumn("Ord")) != nil){
                 jtop.Ord = NSNumber(int:result.intForColumn("Ord"))
-            }
-            if(NSNumber(int:result.intForColumn("DoneAmount")) != NSNull()){
+            //}
+            //if(NSNumber(int:result.intForColumn("DoneAmount")) != nil){
                 jtop.DoneAmount = NSNumber(int:result.intForColumn("DoneAmount"))
-            }
-            if(result.stringForColumn("Deadline") != nil){
+            //}
+            //if(result.stringForColumn("Deadline") != nil){
                 jtop.Deadline = result.stringForColumn("Deadline")
-            }
-            if(result.stringForColumn("ValidateDescription") != nil){
+           // }
+           // if(result.stringForColumn("ValidateDescription") != nil){
                 jtop.ValidateDescription = result.stringForColumn("ValidateDescription")
-            }
-            if(NSNumber(int:result.intForColumn("HasProblems")) != NSNull()){
+            //}
+            //if(NSNumber(int:result.intForColumn("HasProblems")) != nil){
                 jtop.HasProblems = NSNumber(int:result.intForColumn("HasProblems"))
-            }
+            //}
             
             jobTechOpArray.append(jtop)
         }
         return jobTechOpArray
 
+    }
+    
+    func getJobTechOpAdapterModel(jobTechOpIDs: String, techOpIDs: String) -> Array<JobTechOpAdapterModel>{
+        var result = self.runFetchForClass(Job.classForCoder(), fetchBlock: { (database) -> FMResultSet in
+            var currentDate = NSDate()
+            var timeString = currentDate.toString()
+            
+            var sql = "select techOp.*, jobTechOp.id as jobTechOp_id from TechOp as techOp left outer join JobTechOp as jobTechOp on techOp.id=jobTechOp.id_TechOp where jobTechOp.id in (" + jobTechOpIDs + ") and techOp.id in (" + techOpIDs + ") order by jobTechOp.Ord";
+            
+            if let res = self.database?.executeQuery(sql, withArgumentsInArray: [timeString]){
+                
+                return res
+            } else {
+                println("select failed: \(self.database?.lastErrorMessage())")
+                //return self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil)
+            }
+            return FMResultSet()
+            
+            }, fetchResultsBlock: ())
+        
+        var jobTechOpAdapterModelArray: Array<JobTechOpAdapterModel> = []
+        
+        while result.next() {
+            var jtopam = JobTechOpAdapterModel()
+            
+            //if(NSNumber(int:result.intForColumn("jobTechOp_id")) != nil){
+                jtopam.jobTechOpID = NSNumber(int:result.intForColumn("jobTechOp_id"))
+            //}
+            //if(NSNumber(int:result.intForColumn("id")) != nil){
+                jtopam.techOpID = NSNumber(int:result.intForColumn("id"))
+            //}
+            //if(result.stringForColumn("MakeInstructions") != nil){
+                jtopam.makeInstructions = result.stringForColumn("MakeInstructions")
+            //}
+            //if(result.stringForColumn("Name") != nil){
+                jtopam.techOpName = result.stringForColumn("Name")
+            //}
+            jobTechOpAdapterModelArray.append(jtopam)
+        }
+        return jobTechOpAdapterModelArray
         
     }
     

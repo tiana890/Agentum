@@ -22,10 +22,11 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         self.configureTableView()
-
-        var operations = APP.i().databaseController!.getJobTechOps("\(jobPlanID)", isDone: false, findProblemOperation: false)
         
-        
+        var jobTechOpReposit = JobTechOpReposit()
+        jobTechOpReposit.generateJobTechOpList("\(jobPlanID)")
+        jobTechOpAdapterArray =  jobTechOpReposit.jobTechOps
+        table .reloadData()
         // Do any additional setup after loading the view.
     }
 
@@ -50,10 +51,13 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as? OperationViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as? OperationViewCell
         
-        var jobTechOp = operations[indexPath.row]
-        //cell!.name.text = jobTechOp.
+        var jtopam = jobTechOpAdapterArray[indexPath.row]
+        cell!.name.text = jtopam.techOpName as? String
+        cell!.date.text = jtopam.FinishedDay as? String
+        jtopam.setStateTypeValue()
+        cell!.status.text = jtopam.stateTypeValue as? String
         
         return cell!
     }

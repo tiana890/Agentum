@@ -13,6 +13,8 @@ class WorkCell: UITableViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet var numberOfOperations: UILabel!
     @IBOutlet var numberOfFiles: UILabel!
+    @IBOutlet var status: UILabel!
+    
     
     @IBOutlet weak var objectName: UILabel!
     override func awakeFromNib() {

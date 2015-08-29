@@ -28,6 +28,7 @@
 		883CC63D1B79EDEA00201CBB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 883CC63C1B79EDEA00201CBB /* libsqlite3.dylib */; };
 		883CC63F1B79F42300201CBB /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC63E1B79F42300201CBB /* FilesViewController.swift */; };
 		883CC6481B7AFE5800201CBB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC6471B7AFE5700201CBB /* DatabaseController.swift */; };
+		885F588E1B903CE2002B310F /* JobTechOpReposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F588D1B903CE2002B310F /* JobTechOpReposit.swift */; };
 		88DC4B0C1B8B774E00422875 /* alter_v2.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B021B8B774E00422875 /* alter_v2.sql */; };
 		88DC4B0D1B8B774E00422875 /* alter_v3.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B031B8B774E00422875 /* alter_v3.sql */; };
 		88DC4B0E1B8B774E00422875 /* alter_v4.sql in Resources */ = {isa = PBXBuildFile; fileRef = 88DC4B041B8B774E00422875 /* alter_v4.sql */; };
@@ -105,6 +106,7 @@
 		883CC63C1B79EDEA00201CBB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		883CC63E1B79F42300201CBB /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		883CC6471B7AFE5700201CBB /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		885F588D1B903CE2002B310F /* JobTechOpReposit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTechOpReposit.swift; sourceTree = "<group>"; };
 		88DC4B021B8B774E00422875 /* alter_v2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v2.sql; sourceTree = "<group>"; };
 		88DC4B031B8B774E00422875 /* alter_v3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v3.sql; sourceTree = "<group>"; };
 		88DC4B041B8B774E00422875 /* alter_v4.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alter_v4.sql; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				883CC6471B7AFE5700201CBB /* DatabaseController.swift */,
 				88DC4B8B1B8CD07E00422875 /* JobReposit.swift */,
 				88DC4B8D1B8CD15E00422875 /* OperationHelper.swift */,
+				885F588D1B903CE2002B310F /* JobTechOpReposit.swift */,
 			);
 			path = "Support Classes";
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				4CD5C02D1B8D9EDA006E0390 /* NSDate+swift.swift in Sources */,
 				883CC6381B79E96F00201CBB /* FMDatabaseQueue.m in Sources */,
 				4CD5C0361B8DD01F006E0390 /* JobPlanAdapterModel.swift in Sources */,
+				885F588E1B903CE2002B310F /* JobTechOpReposit.swift in Sources */,
 				4CD5C0351B8DD01F006E0390 /* JobAdapterModel.swift in Sources */,
 				883CC6141B77CA6500201CBB /* OperationViewCell.swift in Sources */,
 				4CD5C03A1B8EDB77006E0390 /* JobsViewController.swift in Sources */,

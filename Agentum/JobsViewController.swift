@@ -40,6 +40,7 @@ class JobsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         APP.i().jobReposit?.generateJobLists()
         println("log")
         
+        currentJobState = jobState.actualJobState
         
     }
     
@@ -89,17 +90,30 @@ class JobsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkCell
         
-            cell.name.text = jam.name! as String
-            cell.numberOfOperations.text = "Выполнено \(jam.isOperationDone!.intValue) из \(jam.operationTotalCount!.intValue)"
-            if(jam.countFile?.intValue > 0){
-                cell.numberOfFiles.text = "Файлы(\(jam.countFile!.intValue))"
-            }
-           if let pname = jam.projectName{
-               var str = pname as String
-               cell.objectName.text = "Объект: " + str
+        if let name = jam.name{
+             cell.name.text = name as String
         }
-            cell.layoutIfNeeded()
-            return cell
+        
+        if let isDone = jam.isOperationDone{
+            if let operationTotalCount = jam.operationTotalCount{
+                cell.numberOfOperations.text = "Выполнено \(isDone.intValue) из \(operationTotalCount.intValue)"
+            }
+        }
+        if let countFile = jam.countFile{
+            if countFile.intValue > 0{
+                cell.numberOfFiles.text = "Файлы(\(countFile))"
+            }
+        }
+        if let pname = jam.projectName{
+            cell.objectName.text = "Объект: " + String(pname)
+        }
+        if let status = jam.stateTypeValue{
+            cell.status.text = "Статус: " + String(status)
+        }
+        
+      
+        cell.layoutIfNeeded()
+        return cell
     }
     
     

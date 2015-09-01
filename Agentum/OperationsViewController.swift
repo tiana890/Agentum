@@ -13,6 +13,8 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
     @IBOutlet var table: UITableView!
     
     let textCellIdentifier = "operationCell"
+    let textCellIdentifier2 = "operationCell2"
+    
     var jobPlanID: Int = 0
     
     var jobTechOpAdapterArray: Array<JobTechOpAdapterModel> = []
@@ -51,17 +53,32 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as? OperationViewCell
-        
         var jtopam = jobTechOpAdapterArray[indexPath.row]
-        cell!.name.text = jtopam.techOpName as? String
-        cell!.date.text = jtopam.FinishedDay as? String
-        jtopam.setStateTypeValue()
-        cell!.status.text = jtopam.stateTypeValue as? String
+        var cellIdentifier = textCellIdentifier
         
-        return cell!
+        if(jtopam.countFiles?.intValue > 0){
+            cellIdentifier = textCellIdentifier2
+        }
+        if let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? OperationViewCell{
+            if let name = jtopam.techOpName{
+                cell.name.text = name as String
+            }
+            if let finishedDay = jtopam.FinishedDay{
+                cell.date.text = finishedDay as String
+            }
+            if let status = jtopam.stateTypeValue{
+                cell.status.text = status as String
+                
+            }
+            if let countFile = jtopam.countFiles{
+                cell.numberOfFiles.text = "Файлы(\(countFile.intValue))"
+            }
+            
+            return cell
+        }
+        
+        return UITableViewCell()
     }
-
 
     /*
     // MARK: - Navigation

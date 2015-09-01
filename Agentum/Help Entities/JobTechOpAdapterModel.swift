@@ -27,12 +27,6 @@ class JobTechOpAdapterModel: NSObject {
     var stateTypeValue: NSString?
     
     var countFiles: NSNumber?
-    
-    /*Не начиналась - StartedDay пустой
-Исполняется - StartedDay не пустой
-Исполнена - FInishDay не пустой и isDone = 1
-Справа показывается дата из FInishDay.
-    */
 
     func setStateTypeValue(){
         if(IsDone?.intValue == 1){

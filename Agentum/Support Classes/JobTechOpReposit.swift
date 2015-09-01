@@ -47,6 +47,18 @@ class JobTechOpReposit: NSObject {
             jtopam.StartedDay = jobTechOpsArray[i].StartedDay
             jtopam.FinishedDay = jobTechOpsArray[i].FinishedDay
             jtopam.IsDone = jobTechOpsArray[i].IsDone
+            jtopam.setStateTypeValue()
         }
+        
+        var countFileResponseArray = APP.i().databaseController!.getFilesForTechOps(techOpIDs) as Array<CountFileResponse>
+        for(var i = 0; i < countFileResponseArray.count; i++){
+            for(var j = 0; j < jobTechOps.count; j++){
+                var cfr = countFileResponseArray[i]
+                if(cfr.techOpID == jobTechOps[j].techOpID){
+                    var temp = jobTechOps[j]
+                    temp.countFiles = countFileResponseArray[i].countFile
+                }//end of if
+            }//end of for
+        }//end of for
     }
 }

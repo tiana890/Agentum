@@ -33,10 +33,10 @@ class JobAdapterModel: NSObject {
         if(hasProblems == true){
             self.stateTypeValue = "исправление замечаний"
             
-        } else if (hasStartedTechOp == false && isOperationDone!.intValue == 0){
+        } else if (hasStartedTechOp == false && isOperationDone?.intValue == 0){
             self.stateTypeValue = "ожидание"
             
-        } else if (hasStartedTechOp == true && isOperationDone!.intValue == 0){
+        } else if (hasStartedTechOp == true && isOperationDone?.intValue == 0){
             self.stateTypeValue = "в работе"
             
         } else if (isOperationDone?.intValue != operationTotalCount?.intValue && state == Job.STATE_PARTLY){

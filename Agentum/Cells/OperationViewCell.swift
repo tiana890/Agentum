@@ -13,6 +13,10 @@ class OperationViewCell: UITableViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet var date: UILabel!
     @IBOutlet var status: UILabel!
+    @IBOutlet var numberOfFiles: UILabel!
+    @IBOutlet var startButton: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

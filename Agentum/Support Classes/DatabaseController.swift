@@ -347,7 +347,7 @@ class DatabaseController: NSObject {
             
             //if(result.intForColumn("id")) != nil){
                 jtop.ID = NSNumber(int:result.intForColumn("id"))
-            //}
+//}
             //if(result.intForColumn("Sync") != nil){
                 jtop.Sync = NSNumber(int:result.intForColumn("Sync"))
            // }
@@ -413,24 +413,48 @@ class DatabaseController: NSObject {
         
         while result.next() {
             var jtopam = JobTechOpAdapterModel()
+        
+            jtopam.jobTechOpID = NSNumber(int:result.intForColumn("jobTechOp_id"))
+            jtopam.techOpID = NSNumber(int:result.intForColumn("id"))
+            jtopam.makeInstructions = result.stringForColumn("MakeInstructions")
+            jtopam.techOpName = result.stringForColumn("Name")
             
-            //if(NSNumber(int:result.intForColumn("jobTechOp_id")) != nil){
-                jtopam.jobTechOpID = NSNumber(int:result.intForColumn("jobTechOp_id"))
-            //}
-            //if(NSNumber(int:result.intForColumn("id")) != nil){
-                jtopam.techOpID = NSNumber(int:result.intForColumn("id"))
-            //}
-            //if(result.stringForColumn("MakeInstructions") != nil){
-                jtopam.makeInstructions = result.stringForColumn("MakeInstructions")
-            //}
-            //if(result.stringForColumn("Name") != nil){
-                jtopam.techOpName = result.stringForColumn("Name")
-            //}
             jobTechOpAdapterModelArray.append(jtopam)
         }
         return jobTechOpAdapterModelArray
         
     }
+    
+    func getFilesForTechOps(techOpIDs: String) -> Array<CountFileResponse>{
+        var result = self.runFetchForClass(Job.classForCoder(), fetchBlock: { (database) -> FMResultSet in
+            //SELECT count(id) as count, id_TechOp as techOpId FROM DocFileTechOp where id_TechOp in (1) group by id_TechOp;
+            
+            var sql = "SELECT count(id) as count, id_TechOp as techOpId FROM DocFileTechOp where id_TechOp in(" + techOpIDs + ") group by id_TechOp";
+            
+            if let res = self.database?.executeQuery(sql, withArgumentsInArray: nil){
+                
+                return res
+            } else {
+                println("select failed: \(self.database?.lastErrorMessage())")
+                //return self.database?.executeQuery("select count(*) from Worker", withArgumentsInArray: nil)
+            }
+            return FMResultSet()
+            
+            }, fetchResultsBlock: ())
+        
+        var countFileResponseArray: Array<CountFileResponse> = []
+        
+        while result.next() {
+            var cfr = CountFileResponse()
+            
+            cfr.techOpID = NSNumber(int: result.intForColumn("techOpId"))
+            cfr.countFile = NSNumber(int: result.intForColumn("count"))
+            
+            countFileResponseArray.append(cfr)
+        }
+        return countFileResponseArray
+    }
+    
     
     func jobForMe(jobPlanID: String, workerID: String, brigadeIDs: String) -> Bool{
        

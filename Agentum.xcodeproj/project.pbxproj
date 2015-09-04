@@ -16,6 +16,7 @@
 		4CD5C03E1B8F4FD5006E0390 /* JobTechOpAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C03D1B8F4FD5006E0390 /* JobTechOpAdapterModel.swift */; };
 		4CE3C7581B8C3EC700D57841 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */; };
 		4CE3C75A1B8C489700D57841 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3C7591B8C489700D57841 /* String+md5.swift */; };
+		8822D7EA1B9993CB0069C439 /* OperationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8822D7E91B9993CB0069C439 /* OperationFormViewController.swift */; };
 		883CC60E1B74AF7700201CBB /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC60D1B74AF7700201CBB /* WorkCell.swift */; };
 		883CC6101B775B8100201CBB /* OperationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC60F1B775B8100201CBB /* OperationsViewController.swift */; };
 		883CC6121B7765A500201CBB /* WorkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CC6111B7765A500201CBB /* WorkInfoViewController.swift */; };
@@ -87,6 +88,7 @@
 		4CE3C7571B8C3EC700D57841 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		4CE3C7591B8C489700D57841 /* String+md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+md5.swift"; path = "../String+md5.swift"; sourceTree = "<group>"; };
 		6E38F212FD2F2B7D9EF9079D /* libPods-Agentum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agentum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8822D7E91B9993CB0069C439 /* OperationFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationFormViewController.swift; sourceTree = "<group>"; };
 		883CC60D1B74AF7700201CBB /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
 		883CC60F1B775B8100201CBB /* OperationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsViewController.swift; sourceTree = "<group>"; };
 		883CC6111B7765A500201CBB /* WorkInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkInfoViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				88DE66791B748794004D7F15 /* LaunchScreen.xib */,
 				88DE666E1B748794004D7F15 /* Supporting Files */,
 				883CC63B1B79ED3E00201CBB /* FMDB-Bridging-Header.h */,
+				8822D7E91B9993CB0069C439 /* OperationFormViewController.swift */,
 			);
 			path = Agentum;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				883CC6141B77CA6500201CBB /* OperationViewCell.swift in Sources */,
 				4CD5C03A1B8EDB77006E0390 /* JobsViewController.swift in Sources */,
 				883CC6351B79E96F00201CBB /* FMDatabase.m in Sources */,
+				8822D7EA1B9993CB0069C439 /* OperationFormViewController.swift in Sources */,
 				4CD5C03C1B8F1454006E0390 /* CountFileResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

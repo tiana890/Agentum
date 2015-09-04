@@ -38,8 +38,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate, UIScro
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
-        
     }
 
     // MARK: -UITextFieldDelegate

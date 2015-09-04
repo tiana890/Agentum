@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MobileCoreServices
+import MediaPlayer
 
-class OperationsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+class OperationsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource,
+UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet var table: UITableView!
     
@@ -19,6 +22,7 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
     
     var jobTechOpAdapterArray: Array<JobTechOpAdapterModel> = []
 
+    var newMedia: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +32,21 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
         var jobTechOpReposit = JobTechOpReposit()
         jobTechOpReposit.generateJobTechOpList("\(jobPlanID)")
         jobTechOpAdapterArray =  jobTechOpReposit.jobTechOps
-        table .reloadData()
+        
+        //для эксперимента добавляем еще две операции с видео и формой
+        var j1 = JobTechOpAdapterModel()
+        j1.verifyWay = "form"
+        j1.state = JobTechOpAdapterModel.State.STATE_IN_PROGRESS
+        j1.techOpName = "test form operation"
+        var j2 = JobTechOpAdapterModel()
+        j2.verifyWay = "video"
+        j2.state = JobTechOpAdapterModel.State.STATE_IN_PROGRESS
+        j2.techOpName = "test video operation"
+        
+        jobTechOpAdapterArray.append(j1)
+        jobTechOpAdapterArray.append(j2)
+        
+        table.reloadData()
         // Do any additional setup after loading the view.
     }
 
@@ -68,10 +86,56 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
             }
             if let status = jtopam.stateTypeValue{
                 cell.status.text = status as String
-                
             }
             if let countFile = jtopam.countFiles{
                 cell.numberOfFiles.text = "Файлы(\(countFile.intValue))"
+            }
+            
+            //работа с кнопкой 
+            //вспомогательная функция, устанавливающая корректную картинку для кнопки
+            //в зависимости от типа проверки операции
+            func confButtonCellForVerifyWay(verifyWay: NSString, button: UIButton){
+                switch verifyWay{
+                case JobTechOpAdapterModel.VerifyWayType.PHOTO as String:
+                    button.setImage(UIImage(named: "photo"), forState: UIControlState.Normal)
+                    break
+                case JobTechOpAdapterModel.VerifyWayType.VIDEO as String:
+                    button.setImage(UIImage(named: "video"), forState: UIControlState.Normal)
+                    break
+                case JobTechOpAdapterModel.VerifyWayType.PHOTOFORM as String:
+                    button.setImage(UIImage(named: "photo"), forState: UIControlState.Normal)
+                    break
+                case JobTechOpAdapterModel.VerifyWayType.FORM as String:
+                    button.setImage(UIImage(named: "form"), forState: UIControlState.Normal)
+                    break
+                default:
+                    button.setImage(UIImage(named: "default"), forState: UIControlState.Normal)
+                    break
+                }
+            }
+            
+            if let state = jtopam.state{
+                cell.startButton.tag = indexPath.row
+                //конфигурируем кнопку в зависимости от состояния операции
+                switch state{
+                case JobTechOpAdapterModel.State.STATE_DONE:
+                    cell.startButton.hidden = true
+                    break
+                case JobTechOpAdapterModel.State.STATE_NOT_STARTED:
+                    cell.startButton.hidden = false
+                    cell.startButton.setImage(UIImage(named: "play"), forState: UIControlState.Normal)
+                    break
+                case JobTechOpAdapterModel.State.STATE_IN_PROGRESS:
+                    cell.startButton.hidden = false
+                    if let verifyWay = jtopam.verifyWay{
+                        confButtonCellForVerifyWay(verifyWay, cell.startButton)
+                    }
+                    break
+                default:
+                    cell.startButton.hidden = true
+                    break
+                }
+                
             }
             
             return cell
@@ -80,14 +144,104 @@ class OperationsViewController: UIViewController , UITableViewDelegate, UITableV
         return UITableViewCell()
     }
 
-    /*
-    // MARK: - Navigation
-
-cation, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func actionPressed(sender: UIButton) {
+        //определяем откуда была вызвана кнопка
+        let jtopam = jobTechOpAdapterArray[sender.tag]
+        if let verifyWay = jtopam.verifyWay{
+            switch verifyWay{
+            case JobTechOpAdapterModel.VerifyWayType.PHOTO as String:
+                self.useCamera(kUTTypeImage as NSString)
+                break
+            case JobTechOpAdapterModel.VerifyWayType.VIDEO as String:
+                self.useCamera(kUTTypeMovie as NSString)
+                break
+            case JobTechOpAdapterModel.VerifyWayType.PHOTOFORM as String:
+                self.useCamera(kUTTypeImage as NSString)
+                break
+            case JobTechOpAdapterModel.VerifyWayType.FORM as String:
+                self.performSegueWithIdentifier("formSegue", sender: self)
+                break
+            default:
+                
+                break
+            }
+        }
     }
-    */
+    
+    // MARK: - Camera
+    func useCamera(cameraUseType: NSString) {
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerControllerSourceType.Camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType =
+                UIImagePickerControllerSourceType.Camera
+            imagePicker.mediaTypes = [cameraUseType]
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true,
+                completion: nil)
+            newMedia = true
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        let mediaType = info[UIImagePickerControllerMediaType] as! String
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if mediaType == (kUTTypeMovie as! String) {
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+            
+                
+        } else if mediaType == (kUTTypeMovie as! String) {
+            let videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
+            if (newMedia == true) {
+                let compatible = UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(videoURL.path)
+                if (compatible){
+                    UISaveVideoAtPathToSavedPhotosAlbum(videoURL.path, self, "video:didFinishSavingWithError:contextInfo:", nil)
+                }
+            }
+        }
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafePointer<Void>) {
+        
+        if error != nil {
+            let alert = UIAlertController(title: "Save Failed",
+                message: "Failed to save image",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK",
+                style: .Cancel, handler: nil)
+            
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated: true,
+                completion: nil)
+        }
+    }
+    
+    func video(video: NSURL, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafePointer<Void>) {
+        
+        if error != nil {
+            let alert = UIAlertController(title: "Save Failed",
+                message: "Failed to save video",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK",
+                style: .Cancel, handler: nil)
+            
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated: true,
+                completion: nil)
+        }
+    }
+
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

@@ -418,6 +418,7 @@ class DatabaseController: NSObject {
             jtopam.techOpID = NSNumber(int:result.intForColumn("id"))
             jtopam.makeInstructions = result.stringForColumn("MakeInstructions")
             jtopam.techOpName = result.stringForColumn("Name")
+            jtopam.verifyWay = result.stringForColumn("VerifyWay")
             
             jobTechOpAdapterModelArray.append(jtopam)
         }

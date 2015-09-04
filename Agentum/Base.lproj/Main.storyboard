@@ -202,7 +202,7 @@
                                     <action selector="segmentChangedValue:" destination="Tzp-Gh-j2g" eventType="valueChanged" id="cJZ-LM-Cgl"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mx1-0m-Ky1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mx1-0m-Ky1">
                                 <rect key="frame" x="16" y="103" width="288" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -472,6 +472,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="naK-CA-MXQ" firstAttribute="top" secondItem="mx1-0m-Ky1" secondAttribute="bottom" id="DuA-Lb-YBx"/>
+                            <constraint firstItem="mx1-0m-Ky1" firstAttribute="leading" secondItem="eYX-d5-RUS" secondAttribute="leadingMargin" id="EHG-WK-gQJ"/>
+                            <constraint firstItem="mx1-0m-Ky1" firstAttribute="top" secondItem="PPx-zu-anZ" secondAttribute="bottom" constant="39" id="abt-ci-aRb"/>
+                            <constraint firstItem="mx1-0m-Ky1" firstAttribute="trailing" secondItem="eYX-d5-RUS" secondAttribute="trailingMargin" id="cxE-R4-Gbb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Работы" id="5jX-Qd-8Gv"/>
                     <connections>
@@ -679,6 +685,9 @@
                                                     <state key="normal" image="cam">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="actionPressed:" destination="qzn-yL-ICa" eventType="touchUpInside" id="xxW-Ab-F5Y"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CJ4-TH-dpE">
                                                     <rect key="frame" x="16" y="45" width="56" height="45"/>
@@ -773,6 +782,9 @@
                                                     <state key="normal" image="cam">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="actionPressed:" destination="qzn-yL-ICa" eventType="touchUpInside" id="VHg-mm-SXR"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Завершено" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szV-rl-rsa">
                                                     <rect key="frame" x="203" y="47" width="100" height="21"/>
@@ -856,11 +868,67 @@
                     <navigationItem key="navigationItem" title="Операции" id="FZK-JL-as2"/>
                     <connections>
                         <outlet property="table" destination="XHf-OA-sny" id="EZW-xP-ZG9"/>
+                        <segue destination="gUp-br-kLc" kind="presentation" identifier="formSegue" id="6FL-KR-gkD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-bb-9lh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2053" y="440"/>
+        </scene>
+        <!--Operation Form View Controller-->
+        <scene sceneID="Yv4-hM-hpS">
+            <objects>
+                <viewController id="gUp-br-kLc" customClass="OperationFormViewController" customModule="Agentum" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S4a-2M-gyP"/>
+                        <viewControllerLayoutGuide type="bottom" id="2jM-P4-sKL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e7E-tP-dNJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MX-ji-1az">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Информация" id="Uis-5V-3rf">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="ddx-wy-BES">
+                                            <connections>
+                                                <action selector="back:" destination="gUp-br-kLc" id="UiP-e4-x6R"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8o1-t5-iAx">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="77" id="zIo-Wj-vlE">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zIo-Wj-vlE" id="kqh-eg-sTU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gUp-br-kLc" id="8cm-T9-8eQ"/>
+                                    <outlet property="delegate" destination="gUp-br-kLc" id="2au-x0-82v"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="table" destination="8o1-t5-iAx" id="uwd-SV-0na"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OwA-AX-8C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2496" y="440"/>
         </scene>
         <!--Authorization View Controller-->
         <scene sceneID="svI-wW-2br">
@@ -1010,7 +1078,7 @@
         <image name="nc_words" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H6R-av-7Vw"/>
         <segue reference="l6K-Jw-U39"/>
+        <segue reference="H6R-av-7Vw"/>
     </inferredMetricsTieBreakers>
 </document>

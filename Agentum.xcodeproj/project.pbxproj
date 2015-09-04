@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C04E34B1B99C19E0071228D /* OperationFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C04E34A1B99C19E0071228D /* OperationFormCell.swift */; };
 		4CD5C02D1B8D9EDA006E0390 /* NSDate+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C02C1B8D9EDA006E0390 /* NSDate+swift.swift */; };
 		4CD5C0351B8DD01F006E0390 /* JobAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0331B8DD01F006E0390 /* JobAdapterModel.swift */; };
 		4CD5C0361B8DD01F006E0390 /* JobPlanAdapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5C0341B8DD01F006E0390 /* JobPlanAdapterModel.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C04E34A1B99C19E0071228D /* OperationFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationFormCell.swift; sourceTree = "<group>"; };
 		4CD5C02C1B8D9EDA006E0390 /* NSDate+swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+swift.swift"; sourceTree = "<group>"; };
 		4CD5C0331B8DD01F006E0390 /* JobAdapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobAdapterModel.swift; sourceTree = "<group>"; };
 		4CD5C0341B8DD01F006E0390 /* JobPlanAdapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPlanAdapterModel.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				883CC60D1B74AF7700201CBB /* WorkCell.swift */,
 				883CC6131B77CA6500201CBB /* OperationViewCell.swift */,
+				4C04E34A1B99C19E0071228D /* OperationFormCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				88DC4B231B8B78AE00422875 /* JobTechOp.swift in Sources */,
 				4CD5C0381B8DD038006E0390 /* CountTechOpsResponse.swift in Sources */,
 				88DE66711B748794004D7F15 /* AppDelegate.swift in Sources */,
+				4C04E34B1B99C19E0071228D /* OperationFormCell.swift in Sources */,
 				88DC4B241B8B78AE00422875 /* JobTechOpPlan.swift in Sources */,
 				88DCB03D1B82FE260036F69B /* WorkerSkill.swift in Sources */,
 				88DC4B8E1B8CD15E00422875 /* OperationHelper.swift in Sources */,
@@ -703,6 +707,7 @@
 			baseConfigurationReference = D93FF55E79FE20D4246BCE05 /* Pods-Agentum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/DBAccess",
@@ -712,6 +717,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Agentum/FMDB-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -720,6 +726,7 @@
 			baseConfigurationReference = E28C22C97AA06C60C0DB5E55 /* Pods-Agentum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/DBAccess",
@@ -729,6 +736,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Agentum/FMDB-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

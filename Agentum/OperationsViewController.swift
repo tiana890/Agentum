@@ -94,22 +94,22 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
             //работа с кнопкой 
             //вспомогательная функция, устанавливающая корректную картинку для кнопки
             //в зависимости от типа проверки операции
-            func confButtonCellForVerifyWay(verifyWay: NSString, button: UIButton){
+            func confVerifyWayImageImageCellForVerifyWay(verifyWay: NSString, imageView: UIImageView){
                 switch verifyWay{
                 case JobTechOpAdapterModel.VerifyWayType.PHOTO as String:
-                    button.setImage(UIImage(named: "photo"), forState: UIControlState.Normal)
+                    imageView.image = UIImage(named: "photo")
                     break
                 case JobTechOpAdapterModel.VerifyWayType.VIDEO as String:
-                    button.setImage(UIImage(named: "video"), forState: UIControlState.Normal)
+                    imageView.image = UIImage(named: "video")
                     break
                 case JobTechOpAdapterModel.VerifyWayType.PHOTOFORM as String:
-                    button.setImage(UIImage(named: "photo"), forState: UIControlState.Normal)
+                    imageView.image = UIImage(named: "photo")
                     break
                 case JobTechOpAdapterModel.VerifyWayType.FORM as String:
-                    button.setImage(UIImage(named: "form"), forState: UIControlState.Normal)
+                    imageView.image = UIImage(named: "form")
                     break
                 default:
-                    button.setImage(UIImage(named: "default"), forState: UIControlState.Normal)
+                    imageView.image = UIImage(named: "default")
                     break
                 }
             }
@@ -120,19 +120,23 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
                 switch state{
                 case JobTechOpAdapterModel.State.STATE_DONE:
                     cell.startButton.hidden = true
+                    cell.verifyWayImage.hidden = true
                     break
                 case JobTechOpAdapterModel.State.STATE_NOT_STARTED:
                     cell.startButton.hidden = false
-                    cell.startButton.setImage(UIImage(named: "play"), forState: UIControlState.Normal)
+                    cell.verifyWayImage.hidden = false
+                    cell.verifyWayImage.image = UIImage(named: "play")
                     break
                 case JobTechOpAdapterModel.State.STATE_IN_PROGRESS:
                     cell.startButton.hidden = false
+                    cell.verifyWayImage.hidden = false
                     if let verifyWay = jtopam.verifyWay{
-                        confButtonCellForVerifyWay(verifyWay, cell.startButton)
+                        confVerifyWayImageImageCellForVerifyWay(verifyWay, cell.verifyWayImage)
                     }
                     break
                 default:
                     cell.startButton.hidden = true
+                    cell.verifyWayImage.hidden = true
                     break
                 }
                 

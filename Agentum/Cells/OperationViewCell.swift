@@ -15,7 +15,7 @@ class OperationViewCell: UITableViewCell {
     @IBOutlet var status: UILabel!
     @IBOutlet var numberOfFiles: UILabel!
     @IBOutlet var startButton: UIButton!
-    
+    @IBOutlet var verifyWayImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -22,8 +22,26 @@ class OperationFormViewController: UIViewController, UITableViewDataSource, UITa
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - Navigation Bar Button Item's actions
+    
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
+    }
+    
+    @IBAction func save(sender: AnyObject) {
+        let alert = UIAlertController(title: "",
+            message: "Уверены, что хотите сохранить результаты операции?",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let callCancelActionHandler = { (action:UIAlertAction!) -> Void in
+            self.dismissViewControllerAnimated(true, completion: {});
+        }
+        let cancelAction = UIAlertAction(title: "OK",
+            style: .Cancel, handler: callCancelActionHandler)
+                alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true,
+            completion:nil)
+        
     }
     
     //MARK: - UITable Delegate methods
